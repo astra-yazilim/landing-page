@@ -154,11 +154,6 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Oyun",
     summary: "Skor tablosu olan tarayıcı tabanlı kart oyunu.",
   },
-  /* osmanliYatirim: {
-    title: "Osmanlı Yatırım",
-    category: "Finans",
-    summary: "Yatırım kuruluşu için müşteri giriş ekranı arayüzü.",
-  }, */
   ephesusTaxi: {
     title: "Ephesus Taxi",
     category: "Ulaşım",

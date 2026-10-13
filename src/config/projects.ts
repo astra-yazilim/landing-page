@@ -205,15 +205,6 @@ export const projectCatalog = [
     own: false,
   },
   {
-    id: "osmanliYatirim",
-    image: "/projects/osmanli-yatirim.webp",
-    url: null,
-    device: "browser",
-    platform: "webApp",
-    featured: false,
-    own: false,
-  },
-  {
     id: "ephesusTaxi",
     image: "/projects/ephesus-taxi.webp",
     url: null,

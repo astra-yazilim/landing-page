@@ -154,11 +154,6 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Game",
     summary: "A browser-based card game with a scoreboard.",
   },
-  /* osmanliYatirim: {
-    title: "Osmanlı Yatırım",
-    category: "Finance",
-    summary: "A customer sign-in interface for an investment firm.",
-  }, */
   ephesusTaxi: {
     title: "Ephesus Taxi",
     category: "Transport",
