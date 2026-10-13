@@ -1,0 +1,113 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 9vw, 120px);
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.live {
+  margin-top: clamp(48px, 8vw, 96px);
+}
+
+.head {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.catalogHead {
+  margin-top: var(--section-space);
+}
+
+.product {
+  --accent: var(--color-accent);
+  --accent-rgb: var(--rgb-emerald);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(28px, 6vw, 80px);
+}
+
+.indigo {
+  --accent: var(--color-accent-alt);
+  --accent-rgb: var(--rgb-indigo);
+}
+
+.visual {
+  position: relative;
+  padding: clamp(24px, 5vw, 56px) clamp(16px, 4vw, 40px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(70% 80% at 50% 100%, rgb(var(--accent-rgb) / 0.22), transparent 70%), var(--surface-raised);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+}
+
+.index {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.name {
+  font-size: clamp(1.75rem, 3.8vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+.tagline {
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.description {
+  max-width: 54ch;
+  color: var(--color-muted);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 12px 24px;
+  width: 100%;
+  margin-block: 10px 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9375rem;
+}
+
+.features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.features svg {
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+@media (min-width: 960px) {
+  .product {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product:nth-child(even) .visual {
+    order: 2;
+  }
+}

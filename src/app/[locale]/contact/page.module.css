@@ -1,0 +1,105 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.formCard {
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(70% 50% at 100% 0%, rgb(var(--rgb-emerald) / 0.1), transparent 65%), var(--surface);
+  backdrop-filter: blur(24px);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.asideTitle {
+  margin-bottom: 20px;
+  color: var(--color-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  word-spacing: normal;
+  text-transform: uppercase;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.channelIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.channelLabel {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.channelValue {
+  color: var(--color-heading);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+a.channelValue:hover {
+  color: var(--color-accent);
+}
+
+.nextSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nextSteps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  line-height: 1.5;
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgb(var(--rgb-emerald) / 0.4);
+  border-radius: 50%;
+  color: var(--color-accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}

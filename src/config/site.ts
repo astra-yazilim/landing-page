@@ -1,0 +1,23 @@
+export const siteConfig = {
+  name: "Astra Yazılım",
+  shortName: "Astra",
+  legalName: "Astra Yazılım",
+  logo: "/astra-yazilim-logo.svg",
+  favicon: "/favicon.svg",
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com").replace(/\/$/, ""),
+  themeColor: { dark: "#0B0F17", light: "#F6F8FB" },
+  contact: {
+    email: "info@astrayazilim.com",
+    phone: "" as string,
+    whatsapp: "" as string,
+    country: "TR",
+  },
+  social: [] as { label: string; href: string }[],
+  isAcceptingClients: true,
+};
+
+export const themeStorageKey = "theme";
+
+export type Theme = "dark" | "light";
+
+export const defaultTheme: Theme = "dark";

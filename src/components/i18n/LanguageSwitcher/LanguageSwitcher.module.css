@@ -1,0 +1,32 @@
+.switcher {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+
+.option {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  color: var(--color-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  transition:
+    color var(--duration) var(--ease-out),
+    background-color var(--duration) var(--ease-out);
+}
+
+.option:hover {
+  color: var(--color-heading);
+}
+
+.active {
+  background: var(--surface-raised);
+  color: var(--color-heading);
+}

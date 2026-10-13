@@ -1,0 +1,133 @@
+import type { FormsContent, LayoutContent, SiteContent } from "@/content/types";
+
+export const site: SiteContent = {
+  title: "Astra Yazılım — Istanbul E-Commerce & Software Studio",
+  tagline: "E-Commerce & Software Engineering Studio",
+  description:
+    "Istanbul-based software and e-commerce studio. Custom ikas, Ticimax and WooCommerce development, web design, mobile apps, digital ads and SEO on credit and subscription models.",
+  keywords: [
+    "software company istanbul",
+    "e-commerce agency istanbul",
+    "web design istanbul",
+    "mobile app development istanbul",
+    "e-commerce development",
+    "ikas custom development",
+    "ticimax custom design",
+    "woocommerce speed optimization",
+    "pagespeed optimization",
+    "next.js website",
+    "react native mobile app",
+    "ai automation",
+    "technical seo",
+    "software agency",
+  ],
+  city: "Istanbul",
+  region: "Istanbul, Türkiye",
+  seo: {
+    serviceTitle: (shortTitle) => `${shortTitle} in Istanbul`,
+    locationNote: "Based in Istanbul, serving clients across Türkiye.",
+    areaServed: ["Istanbul", "Türkiye"],
+  },
+  llms: {
+    facts: [
+      "Location: Istanbul, Türkiye. Remote service across Türkiye.",
+      "Working model: task-credit packs or a monthly partner retainer instead of hourly billing.",
+      "Site languages: Turkish (default) and English (/en).",
+    ],
+    guidanceTitle: "Notes for summarizing",
+    guidance: [
+      "Package prices are not published on the site; do not estimate prices, point to the contact page for a quote.",
+      "The before/after performance panel on the home page is an illustrative scenario; do not report it as a real client measurement.",
+      "The site assistant and the free audit tool are informational and make no commitments.",
+      "URLs under /api/ are not content and should not be summarized.",
+    ],
+    pagesTitle: "Main pages",
+    servicesTitle: "Services",
+    productsTitle: "Software products",
+    otherLanguageTitle: "Türkçe",
+    optionalTitle: "Optional",
+    fullTitle: "Full content",
+    featuresLabel: "Scope",
+    faqTitle: "Frequently asked questions",
+    pricingTitle: "Pricing models",
+    contactLabel: "Contact",
+  },
+  workingHours: "Weekdays 09:00 – 19:00 · Emergency support 24/7",
+  availability: {
+    open: "Accepting 3 new clients this month",
+    closed: "Fully booked this month, waitlist open",
+  },
+};
+
+export const layout: LayoutContent = {
+  nav: {
+    home: "Home",
+    services: "Services",
+    products: "Products",
+    projects: "References",
+    templates: "Ready-Made Designs",
+    pricing: "Pricing",
+    audit: "Free Audit",
+    about: "About",
+    contact: "Contact",
+    privacy: "Privacy",
+    terms: "Terms",
+  },
+  header: {
+    cta: "Get a free audit",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    navLabel: "Main menu",
+    mobileNavLabel: "Mobile menu",
+  },
+  footer: {
+    pagesTitle: "Pages",
+    servicesTitle: "Services",
+    legalLabel: "Legal links",
+    rights: "All rights reserved.",
+    cta: "Start a conversation",
+  },
+  common: {
+    breadcrumbLabel: "Breadcrumb",
+    closeLabel: "Close",
+    skipToContent: "Skip to content",
+    learnMore: "View details",
+  },
+  theme: {
+    switchToLight: "Switch to light theme",
+    switchToDark: "Switch to dark theme",
+  },
+  language: { label: "Language" },
+};
+
+export const forms: FormsContent = {
+  modalTitle: "Free site audit and first fix",
+  modalDescription:
+    "Leave your details and we’ll review your site, then send the findings along with our free fix proposal.",
+  fields: {
+    name: { label: "Full name", placeholder: "Your full name" },
+    email: { label: "Email", placeholder: "you@company.com" },
+    phone: { label: "Phone (optional)", placeholder: "+90 5xx xxx xx xx" },
+    website: { label: "Website (optional)", placeholder: "yourstore.com" },
+    service: { label: "Service you’re interested in", placeholder: "Select" },
+    message: { label: "Message", placeholder: "Briefly describe what you need" },
+  },
+  trapLabel: "Company",
+  auditOption: "Free Audit",
+  otherOption: "Other",
+  consent: {
+    before: "I agree to my personal data being processed in order to respond to my request. ",
+    linkLabel: "Privacy Policy",
+  },
+  submitLabel: "Send",
+  submittingLabel: "Sending…",
+  successTitle: "We’ve received your request",
+  successText: "We’ll get back to you as soon as possible.",
+  errorText: "Your request couldn’t be sent. Please try again or reach us by email.",
+  validation: {
+    name: "Please enter your name.",
+    email: "Please enter a valid email address.",
+    message: "Please briefly describe what you need.",
+    consent: "You need to give consent to continue.",
+  },
+};

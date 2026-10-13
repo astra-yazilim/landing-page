@@ -1,0 +1,73 @@
+.card {
+  --spot-x: 50%;
+  --spot-y: 0%;
+  --spot-color: var(--rgb-emerald);
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(24px);
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.indigo {
+  --spot-color: var(--rgb-indigo);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--spot-x) var(--spot-y),
+    rgb(var(--spot-color) / 0.16),
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    260px circle at var(--spot-x) var(--spot-y),
+    rgb(var(--spot-color) / 0.7),
+    transparent 70%
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus-within::before {
+  opacity: 1;
+}
+
+.highlighted {
+  border-color: rgb(var(--rgb-emerald) / 0.45);
+  background: linear-gradient(180deg, rgb(var(--rgb-emerald) / 0.1), rgb(var(--rgb-fg) / 0.03) 55%);
+  box-shadow: 0 30px 90px -40px rgb(var(--rgb-emerald) / 0.55);
+}
+
+@media (hover: none) {
+  .card::before,
+  .card::after {
+    display: none;
+  }
+}

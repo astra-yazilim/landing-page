@@ -1,0 +1,27 @@
+.tiers {
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.section {
+  padding-top: var(--section-space);
+}
+
+.faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 5vw, 64px);
+  padding-top: var(--section-space);
+}
+
+.faqTitle {
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+
+@media (min-width: 960px) {
+  .faq {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}

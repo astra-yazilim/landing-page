@@ -1,0 +1,56 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: clamp(28px, 5vw, 64px);
+  animation: enter 0.8s var(--ease-out) both;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  color: var(--color-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crumbs li + li::before {
+  content: "/";
+  color: var(--color-faint);
+}
+
+.crumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  transition: color var(--duration) var(--ease-out);
+}
+
+.crumbs a:hover {
+  color: var(--color-accent);
+}
+
+.crumbs span[aria-current] {
+  color: var(--color-text);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

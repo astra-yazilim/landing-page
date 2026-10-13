@@ -1,0 +1,21 @@
+.skipLink {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  font-weight: 700;
+  transform: translateY(-200%);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.skipLink:focus-visible {
+  transform: none;
+}
+
+.main {
+  min-height: 60dvh;
+}

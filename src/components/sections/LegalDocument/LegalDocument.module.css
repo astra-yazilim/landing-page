@@ -1,0 +1,30 @@
+.updated {
+  color: var(--color-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 720px;
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  font-size: 1.375rem;
+  letter-spacing: -0.025em;
+}
+
+.contact a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

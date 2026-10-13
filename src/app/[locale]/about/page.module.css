@@ -1,0 +1,76 @@
+.section,
+.story {
+  padding-top: var(--section-space);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 5vw, 64px);
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+
+.section > .title,
+.head {
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 62ch;
+  color: var(--color-text);
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 16px;
+}
+
+.principles li,
+.reveal {
+  display: flex;
+}
+
+.reveal {
+  width: 100%;
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 28px;
+}
+
+.principleIcon {
+  margin-bottom: 32px;
+  color: var(--color-accent);
+}
+
+.principleTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.principleText {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 960px) {
+  .story {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+}

@@ -1,0 +1,211 @@
+.panel {
+  --state-color: var(--color-warning);
+  --state-rgb: var(--rgb-warning);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface)), var(--surface-solid);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    var(--shadow-panel),
+    0 0 110px -50px rgb(var(--state-rgb) / 0.6);
+  transition: box-shadow 0.8s var(--ease-out);
+}
+
+.after {
+  --state-color: var(--color-accent);
+  --state-rgb: var(--rgb-emerald);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  color: var(--color-heading);
+  font-family: var(--font-heading), sans-serif;
+  word-spacing: var(--heading-word-spacing);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.note {
+  color: var(--color-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--well);
+}
+
+.toggleButton {
+  position: relative;
+  min-width: 76px;
+  min-height: 40px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color var(--duration) var(--ease-out);
+}
+
+.toggleActive {
+  color: var(--color-on-brand);
+}
+
+.togglePill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--state-color);
+  transition: background-color 0.5s var(--ease-out);
+}
+
+.toggleLabel {
+  position: relative;
+}
+
+.scoreRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ring {
+  position: relative;
+  width: clamp(104px, 22vw, 132px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ringTrack,
+.ringValue {
+  fill: none;
+  stroke-width: 9;
+}
+
+.ringTrack {
+  stroke: var(--track);
+}
+
+.ringValue {
+  stroke: var(--state-color);
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgb(var(--state-rgb) / 0.6));
+  transition:
+    stroke-dashoffset 0.9s var(--ease-out),
+    stroke 0.5s var(--ease-out);
+}
+
+.score {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--state-color);
+  font-family: var(--font-heading), sans-serif;
+  word-spacing: var(--heading-word-spacing);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  transition: color 0.5s var(--ease-out);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.captionLabel {
+  color: var(--state-color);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.5s var(--ease-out);
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metricHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.metricHead dt {
+  color: var(--color-muted);
+}
+
+.metricHead dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--track);
+  overflow: hidden;
+}
+
+.barFill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgb(var(--state-rgb) / 0.5), var(--state-color));
+  transform-origin: left center;
+  transition:
+    transform 0.9s var(--ease-out),
+    background 0.5s var(--ease-out);
+}
+
+:global([data-theme="light"]) .toggleActive {
+  color: #fff;
+}
