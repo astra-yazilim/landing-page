@@ -4,6 +4,7 @@ import type { PageRouteId, RouteId } from "@/config/routes";
 import type { ProductId } from "@/config/products";
 import type { ProjectId, ProjectPlatform } from "@/config/projects";
 import type { ServiceId } from "@/config/services";
+import type { AuditCategoryId, AuditMetricId, AuditStrategy } from "@/lib/audit";
 
 export type TemplateFeature = "shop" | "blog" | "portfolio" | "onePage";
 
@@ -171,6 +172,12 @@ export type HomeContent = {
     unavailableText: string;
     resultTitle: string;
     resultSource: string;
+    strategyLabel: string;
+    strategies: Record<AuditStrategy, string>;
+    strategyUnavailable: string;
+    issuesTitle: string;
+    causesLabel: string;
+    explanations: Record<AuditCategoryId | AuditMetricId, string>;
     opportunitiesTitle: string;
     resultCta: string;
     retryLabel: string;

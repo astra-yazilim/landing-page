@@ -5,7 +5,7 @@ import { LeadButton } from "@/components/lead/LeadButton/LeadButton";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { useContent, useLocale } from "@/components/i18n/LocaleProvider/LocaleProvider";
-import type { AuditResult } from "@/lib/audit";
+import { auditStrategies, criticalScore, type AuditResult, type AuditStrategy } from "@/lib/audit";
 import { cx, normalizeWebsiteUrl } from "@/lib/text";
 import styles from "./AuditWidget.module.css";
 
@@ -13,7 +13,9 @@ type AuditStatus = "idle" | "loading" | "result" | "unavailable";
 
 const loadingStepInterval = 3500;
 
-const scoreTone = (value: number) => (value >= 90 ? "good" : value >= 50 ? "average" : "poor");
+type AuditResults = Partial<Record<AuditStrategy, AuditResult>>;
+
+const scoreTone = (value: number) => (value >= 90 ? "good" : value >= criticalScore ? "average" : "poor");
 
 const displayHost = (url: string) => {
   try {
@@ -30,10 +32,13 @@ export function AuditWidget() {
   const loadingStepCount = auditContent.loadingSteps.length;
   const inputId = useId();
   const errorId = `${inputId}-error`;
+  const strategyId = `${inputId}-strategy`;
   const [inputValue, setInputValue] = useState("");
   const [status, setStatus] = useState<AuditStatus>("idle");
   const [inputError, setInputError] = useState("");
-  const [result, setResult] = useState<AuditResult | null>(null);
+  const [results, setResults] = useState<AuditResults>({});
+  const [strategy, setStrategy] = useState<AuditStrategy>(auditStrategies[0]);
+  const result = results[strategy];
   const [submittedUrl, setSubmittedUrl] = useState("");
   const [loadingStep, setLoadingStep] = useState(0);
 
@@ -59,19 +64,31 @@ export function AuditWidget() {
     setSubmittedUrl(url);
     setStatus("loading");
 
-    try {
-      const response = await fetch(`/api/audit?url=${encodeURIComponent(url)}&locale=${locale}`);
-      if (!response.ok) throw new Error("unavailable");
-      setResult((await response.json()) as AuditResult);
-      setStatus("result");
-    } catch {
+    const settled = await Promise.allSettled(
+      auditStrategies.map(async (item) => {
+        const response = await fetch(`/api/audit?url=${encodeURIComponent(url)}&locale=${locale}&strategy=${item}`);
+        if (!response.ok) throw new Error("unavailable");
+        return (await response.json()) as AuditResult;
+      }),
+    );
+    const measured: AuditResults = {};
+    settled.forEach((outcome) => {
+      if (outcome.status === "fulfilled") measured[outcome.value.strategy] = outcome.value;
+    });
+    const firstMeasured = auditStrategies.find((item) => measured[item]);
+    if (!firstMeasured) {
       setStatus("unavailable");
+      return;
     }
+
+    setResults(measured);
+    setStrategy(firstMeasured);
+    setStatus("result");
   };
 
   const reset = () => {
     setStatus("idle");
-    setResult(null);
+    setResults({});
   };
 
   const leadDefaults = { source: "audit-widget", website: submittedUrl, service: forms.auditOption };
@@ -143,10 +160,32 @@ export function AuditWidget() {
               <p className={styles.resultTitle}>{auditContent.resultTitle}</p>
               <p className={styles.resultHost}>{displayHost(result.url)}</p>
             </div>
-            <button type="button" className={styles.retry} onClick={reset}>
-              <Icon name="retry" size={16} />
-              {auditContent.retryLabel}
-            </button>
+            <div className={styles.resultActions}>
+              <div className={styles.strategy}>
+                <label htmlFor={strategyId} className="visually-hidden">
+                  {auditContent.strategyLabel}
+                </label>
+                <select
+                  id={strategyId}
+                  className={styles.strategySelect}
+                  value={strategy}
+                  onChange={(event) => setStrategy(event.target.value as AuditStrategy)}
+                >
+                  {auditStrategies.map((item) => (
+                    <option key={item} value={item} disabled={!results[item]}>
+                      {results[item]
+                        ? auditContent.strategies[item]
+                        : `${auditContent.strategies[item]} (${auditContent.strategyUnavailable})`}
+                    </option>
+                  ))}
+                </select>
+                <Icon name="chevronDown" size={16} />
+              </div>
+              <button type="button" className={styles.retry} onClick={reset}>
+                <Icon name="retry" size={16} />
+                {auditContent.retryLabel}
+              </button>
+            </div>
           </div>
 
           <ul className={styles.scores}>
@@ -161,12 +200,39 @@ export function AuditWidget() {
           {result.metrics.length > 0 ? (
             <dl className={styles.metrics}>
               {result.metrics.map((metric) => (
-                <div key={metric.id} className={styles.metric}>
+                <div key={metric.id} className={cx(styles.metric, metric.critical && styles.metricCritical)}>
                   <dt>{auditContent.metrics[metric.id]}</dt>
                   <dd>{metric.value}</dd>
                 </div>
               ))}
             </dl>
+          ) : null}
+
+          {result.issues.length > 0 ? (
+            <div className={styles.issues}>
+              <p className={styles.opportunitiesTitle}>{auditContent.issuesTitle}</p>
+              <ul className={styles.issueList}>
+                {result.issues.map((issue) => (
+                  <li key={issue.id} className={styles.issue}>
+                    <p className={styles.issueHead}>
+                      <span>{{ ...auditContent.categories, ...auditContent.metrics }[issue.id]}</span>
+                      <span className={styles.issueValue}>{issue.value}</span>
+                    </p>
+                    <p className={styles.issueText}>{auditContent.explanations[issue.id]}</p>
+                    {issue.causes.length > 0 ? (
+                      <>
+                        <p className={styles.causesLabel}>{auditContent.causesLabel}</p>
+                        <ul className={styles.causes}>
+                          {issue.causes.map((cause) => (
+                            <li key={cause}>{cause}</li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
 
           {result.opportunities.length > 0 ? (

@@ -150,13 +150,37 @@ export const home: HomeContent = {
     inputPlaceholder: "https://magazaniz.com",
     submitLabel: "Ücretsiz analiz al",
     loadingLabel: "Analiz ediliyor",
-    loadingSteps: ["Sayfa mobil cihazda açılıyor", "Core Web Vitals ölçülüyor", "Darboğazlar sıralanıyor"],
+    loadingSteps: ["Sayfa mobil ve masaüstünde açılıyor", "Core Web Vitals ölçülüyor", "Darboğazlar sıralanıyor"],
     note: "Ücretsiz, faydalı ve satış baskısı yok.",
     invalidUrlMessage: "Lütfen geçerli bir site adresi girin.",
     unavailableTitle: "Otomatik ölçüm şu an tamamlanamadı",
     unavailableText: "Adresinizi bize bırakın; sitenizi elle inceleyip analiz raporunu size iletelim.",
-    resultTitle: "Mobil ölçüm sonucu",
+    resultTitle: "Ölçüm sonucu",
     resultSource: "Kaynak: Google PageSpeed Insights",
+    strategyLabel: "Cihaz",
+    strategies: { mobile: "Mobil", desktop: "Masaüstü" },
+    strategyUnavailable: "ölçülemedi",
+    issuesTitle: "Kritik eşiğin altındaki değerler",
+    causesLabel: "Bu sitede tespit edilenler",
+    explanations: {
+      performance:
+        "Performans puanı; açılış, tepki ve görsel kararlılık metriklerinin ağırlıklı ortalamasıdır. Düşük puanın kaynağı çoğunlukla ağır JavaScript, optimize edilmemiş görseller ve yavaş sunucu yanıtıdır.",
+      seo: "Arama motorları sayfayı tararken ve anlamlandırırken sorun yaşıyor. Kaynak genellikle eksik başlık ve açıklama etiketleri, taranamayan bağlantılar veya indekslemeyi engelleyen ayarlardır.",
+      accessibility:
+        "Ekran okuyucu veya klavye kullanan ziyaretçiler sayfanın bazı bölümlerini kullanamıyor. Kaynak genellikle düşük renk kontrastı, etiketsiz bağlantı ve butonlar ile hatalı başlık sırasıdır.",
+      "best-practices":
+        "Sayfa güncel web standartlarının ve güvenlik pratiklerinin gerisinde kalıyor. Kaynak genellikle konsol hataları, üçüncü taraf çerezleri, güvensiz istekler veya eskimiş kütüphanelerdir.",
+      "largest-contentful-paint":
+        "Sayfanın en büyük görseli veya metin bloğu geç görünüyor; ziyaretçi sayfayı açılmamış olarak algılıyor. Kaynak genellikle büyük kapak görselleri, oluşturmayı engelleyen CSS ve JavaScript ile yavaş sunucu yanıtıdır.",
+      "first-contentful-paint":
+        "İlk içerik ekrana geç geliyor; ziyaretçi uzun süre boş sayfa görüyor. Kaynak genellikle yavaş sunucu yanıtı, yönlendirmeler ve oluşturmayı engelleyen CSS ile yazı tipleridir.",
+      "total-blocking-time":
+        "Sayfa görünse bile dokunma ve tıklamalara geç yanıt veriyor. Kaynak, tarayıcıyı kilitleyen ağır JavaScript'tir; çoğunlukla üçüncü taraf eklentiler, takip kodları ve büyük paketler.",
+      "cumulative-layout-shift":
+        "Sayfa yüklenirken öğeler yer değiştiriyor ve ziyaretçi yanlış yere tıklayabiliyor. Kaynak genellikle boyutu belirtilmemiş görseller, sonradan eklenen bannerlar ve geç yüklenen yazı tipleridir.",
+      "speed-index":
+        "Görünür alan yavaş doluyor; içerik parça parça geliyor. Kaynak genellikle oluşturmayı engelleyen dosyalar, ağır JavaScript ve geç yüklenen görsellerdir.",
+    },
     opportunitiesTitle: "Öne çıkan iyileştirme fırsatları",
     resultCta: "Detaylı rapor ve ücretsiz ilk düzeltme",
     retryLabel: "Başka bir adres dene",

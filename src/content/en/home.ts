@@ -146,13 +146,37 @@ export const home: HomeContent = {
     inputPlaceholder: "https://yourstore.com",
     submitLabel: "Get my free analysis",
     loadingLabel: "Analyzing",
-    loadingSteps: ["Loading the page on mobile", "Measuring Core Web Vitals", "Ranking the bottlenecks"],
+    loadingSteps: ["Loading the page on mobile and desktop", "Measuring Core Web Vitals", "Ranking the bottlenecks"],
     note: "Free, useful, and no sales ambush.",
     invalidUrlMessage: "Please enter a valid website address.",
     unavailableTitle: "The automated measurement couldn’t complete right now",
     unavailableText: "Leave us your URL and we’ll review your site by hand and send you the report.",
-    resultTitle: "Mobile measurement result",
+    resultTitle: "Measurement result",
     resultSource: "Source: Google PageSpeed Insights",
+    strategyLabel: "Device",
+    strategies: { mobile: "Mobile", desktop: "Desktop" },
+    strategyUnavailable: "not measured",
+    issuesTitle: "Values below the critical threshold",
+    causesLabel: "Found on this site",
+    explanations: {
+      performance:
+        "The performance score is a weighted average of loading, responsiveness and visual stability metrics. A low score usually comes from heavy JavaScript, unoptimized images and slow server responses.",
+      seo: "Search engines struggle to crawl and understand the page. The usual sources are missing title and description tags, links that can’t be crawled, or settings that block indexing.",
+      accessibility:
+        "Visitors using a screen reader or keyboard can’t use parts of the page. The usual sources are low color contrast, unlabeled links and buttons, and a broken heading order.",
+      "best-practices":
+        "The page falls behind current web standards and security practices. The usual sources are console errors, third-party cookies, insecure requests or outdated libraries.",
+      "largest-contentful-paint":
+        "The largest image or text block shows up late, so visitors perceive the page as not loaded. The usual sources are large hero images, render-blocking CSS and JavaScript, and slow server responses.",
+      "first-contentful-paint":
+        "The first content arrives late, so visitors stare at a blank page. The usual sources are slow server responses, redirects, and render-blocking CSS and fonts.",
+      "total-blocking-time":
+        "Even once the page is visible, it responds late to taps and clicks. The source is heavy JavaScript locking up the browser, mostly third-party plugins, tracking scripts and large bundles.",
+      "cumulative-layout-shift":
+        "Elements move around while the page loads, so visitors can tap the wrong thing. The usual sources are images without dimensions, late-injected banners and late-loading fonts.",
+      "speed-index":
+        "The visible area fills in slowly and content arrives piece by piece. The usual sources are render-blocking files, heavy JavaScript and late-loading images.",
+    },
     opportunitiesTitle: "Top improvement opportunities",
     resultCta: "Detailed report & free first fix",
     retryLabel: "Try another URL",

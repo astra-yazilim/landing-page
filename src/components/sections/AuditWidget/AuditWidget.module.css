@@ -164,6 +164,43 @@
   overflow-wrap: anywhere;
 }
 
+.resultActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.strategy {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.strategy svg {
+  position: absolute;
+  right: 12px;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.strategySelect {
+  appearance: none;
+  min-height: 40px;
+  padding: 8px 36px 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease-out);
+}
+
+.strategySelect:hover {
+  border-color: var(--border-strong);
+}
+
 .retry {
   display: inline-flex;
   align-items: center;
@@ -253,6 +290,68 @@
   font-family: var(--font-mono), monospace;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+.metricCritical dd {
+  color: var(--color-danger);
+}
+
+.issues {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.issueList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.issue {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid rgb(var(--rgb-danger) / 0.3);
+  border-radius: var(--radius-md);
+  background: rgb(var(--rgb-danger) / 0.07);
+}
+
+.issueHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.issueValue {
+  color: var(--color-danger);
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.issueText {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.causesLabel {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.causes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 18px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  list-style: disc;
 }
 
 .opportunities {

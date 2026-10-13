@@ -1,3 +1,5 @@
+export const auditStrategies = ["mobile", "desktop"] as const;
+
 export const auditCategoryIds = ["performance", "seo", "accessibility", "best-practices"] as const;
 
 export const auditMetricIds = [
@@ -8,9 +10,26 @@ export const auditMetricIds = [
   "speed-index",
 ] as const;
 
+export type AuditStrategy = (typeof auditStrategies)[number];
+export type AuditCategoryId = (typeof auditCategoryIds)[number];
+export type AuditMetricId = (typeof auditMetricIds)[number];
+
+export const criticalScore = 50;
+
+export const isAuditStrategy = (value: string): value is AuditStrategy =>
+  auditStrategies.includes(value as AuditStrategy);
+
+export type AuditIssue = {
+  id: AuditCategoryId | AuditMetricId;
+  value: string;
+  causes: string[];
+};
+
 export type AuditResult = {
   url: string;
-  scores: { id: (typeof auditCategoryIds)[number]; value: number }[];
-  metrics: { id: (typeof auditMetricIds)[number]; value: string }[];
+  strategy: AuditStrategy;
+  scores: { id: AuditCategoryId; value: number }[];
+  metrics: { id: AuditMetricId; value: string; critical: boolean }[];
   opportunities: string[];
+  issues: AuditIssue[];
 };
