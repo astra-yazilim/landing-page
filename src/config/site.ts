@@ -4,7 +4,7 @@ export const siteConfig = {
   legalName: "Astra Yazılım",
   logo: "/astra-yazilim-logo.svg",
   favicon: "/favicon.svg",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://astrayazilim.com.tr/").replace(/\/$/, ""),
   themeColor: { dark: "#0B0F17", light: "#F6F8FB" },
   contact: {
     email: "info@astrayazilim.com",
