@@ -1,10 +1,10 @@
 import type { FormsContent, LayoutContent, SiteContent } from "@/content/types";
 
 export const site: SiteContent = {
-  title: "Astra Yazılım — Istanbul E-Commerce & Software Studio",
-  tagline: "E-Commerce & Software Engineering Studio",
+  title: "Astra Yazılım — Istanbul Software & E-Commerce Solutions",
+  tagline: "Software & E-Commerce Solutions",
   description:
-    "Istanbul-based software and e-commerce studio. Custom ikas, Ticimax and WooCommerce development, web design, mobile apps, digital ads and SEO on credit and subscription models.",
+    "Istanbul-based software and e-commerce solutions, backed by experience since 2009. Custom ikas, Ticimax and WooCommerce development, web design, mobile apps, digital ads and SEO on credit and subscription models.",
   keywords: [
     "software company istanbul",
     "e-commerce agency istanbul",
@@ -33,12 +33,14 @@ export const site: SiteContent = {
       "Location: Istanbul, Türkiye. Remote service across Türkiye.",
       "Working model: task-credit packs or a monthly partner retainer instead of hourly billing.",
       "Site languages: Turkish (default) and English (/en).",
+      "Experience: the team’s software experience goes back to 2009.",
     ],
     guidanceTitle: "Notes for summarizing",
     guidance: [
       "Package prices are not published on the site; do not estimate prices, point to the contact page for a quote.",
       "The before/after performance panel on the home page is an illustrative scenario; do not report it as a real client measurement.",
       "The site assistant and the free audit tool are informational and make no commitments.",
+      "2009 marks the start of the team’s software experience; don’t present it as the company’s founding year.",
       "URLs under /api/ are not content and should not be summarized.",
     ],
     pagesTitle: "Main pages",

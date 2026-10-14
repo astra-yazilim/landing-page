@@ -139,16 +139,17 @@ export const pages: PagesContent = {
     meta: {
       title: "Hakkımızda",
       description:
-        "Astra Yazılım; e-ticaret ve yazılım mühendisliğini erişilebilir kredi ve abonelik modelleriyle sunan, İstanbul merkezli butik bir mühendislik stüdyosudur.",
+        "Astra Yazılım; 2009'dan bu yana süren yazılım deneyimiyle web, mobil, e-ticaret ve otomasyon projeleri geliştiren İstanbul merkezli bir yazılım şirketidir.",
     },
     eyebrow: "Hakkımızda",
-    title: { lead: "Butik bir mühendislik stüdyosu.", accent: "Ulaşılabilir bir model." },
+    title: { lead: "2009'dan bu yana süren", accent: "yazılım deneyimi." },
     description:
-      "İyi mühendisliğin yalnızca büyük bütçeli şirketlerin erişebildiği bir şey olmaması gerektiğine inanıyoruz. Bu yüzden saatlik fatura yerine şeffaf kredi ve abonelik modeliyle çalışıyoruz.",
-    storyTitle: "Neden bu modeli kurduk?",
+      "Web siteleri, e-ticaret altyapıları, mobil uygulamalar ve iş süreçlerini yöneten yazılımlar geliştiriyoruz. Her işe aynı yaklaşımla başlıyoruz: kapsamı netleştirmek, bedeli baştan paylaşmak ve sonucu ölçmek.",
+    storyTitle: "Hikayemiz",
     story: [
-      "E-ticaret işletmelerinin çoğu aynı sorunu yaşıyor: küçük bir değişiklik için platform geliştiricisine yüksek saatlik ücret ödemek ya da ajansın sırasında haftalarca beklemek.",
-      "Biz işi küçük, net görevlere bölüyor ve her görevin karşılığını baştan söylüyoruz. Böylece ne kadar ödeyeceğinizi ve ne alacağınızı işe başlamadan bilirsiniz.",
+      "Ekibimiz 2009'dan bu yana yazılım geliştiriyor. Bu süre boyunca kurumsal web sitelerinden e-ticaret altyapılarına, mobil uygulamalardan şirket içi yönetim panellerine kadar farklı ölçeklerde pek çok projede yer aldık.",
+      "Bu projelerde işletmelerin en çok zorlandığı noktayı yakından gördük: küçük bir değişiklik için yüksek saatlik ücretler ya da haftalar süren bekleme süreleri.",
+      "Astra Yazılım bu deneyimin üzerine kuruldu. İşi net görevlere bölüyor, her görevin kapsamını ve bedelini baştan paylaşıyoruz; böylece ne ödeyeceğinizi ve ne alacağınızı işe başlamadan bilirsiniz.",
     ],
     principlesTitle: "Çalışma ilkelerimiz",
     principles: [

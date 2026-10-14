@@ -18,6 +18,8 @@ export const siteConfig = {
 
 export const themeStorageKey = "theme";
 
+export const systemLightQuery = "(prefers-color-scheme: light)";
+
 export type Theme = "dark" | "light";
 
 export const defaultTheme: Theme = "dark";

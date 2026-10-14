@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
 import type { Locale } from "@/config/i18n";
 import { getPath } from "@/config/routes";
-import { platforms } from "@/config/services";
 import { getContent } from "@/content";
 import { cx } from "@/lib/text";
 import styles from "./Hero.module.css";
@@ -51,11 +50,17 @@ export function Hero({ locale }: { locale: Locale }) {
       <div className={styles.platforms}>
         <div className={cx("container", styles.platformsInner)}>
           <p className={styles.platformsLabel}>{home.platformsLabel}</p>
-          <ul className={styles.platformList}>
-            {platforms.map((platform) => (
-              <li key={platform}>{platform}</li>
-            ))}
-          </ul>
+          <div className={styles.marquee}>
+            <div className={styles.marqueeTrack}>
+              {[false, true].map((isCopy) => (
+                <ul key={String(isCopy)} className={styles.platformList} aria-hidden={isCopy || undefined}>
+                  {home.platforms.map((platform) => (
+                    <li key={platform}>{platform}</li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

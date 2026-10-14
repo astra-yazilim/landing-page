@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useContent } from "@/components/i18n/LocaleProvider/LocaleProvider";
 import { Icon } from "@/components/ui/Icon/Icon";
-import { defaultTheme, siteConfig, themeStorageKey, type Theme } from "@/config/site";
+import { defaultTheme, themeStorageKey, type Theme } from "@/config/site";
+import { applyTheme } from "@/lib/theme";
 import styles from "./ThemeToggle.module.css";
 
 const readTheme = (): Theme => (document.documentElement.dataset.theme === "light" ? "light" : "dark");
@@ -18,10 +19,7 @@ export function ThemeToggle() {
 
   const toggle = () => {
     const nextTheme: Theme = readTheme() === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = nextTheme;
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", siteConfig.themeColor[nextTheme]);
+    applyTheme(nextTheme);
     try {
       localStorage.setItem(themeStorageKey, nextTheme);
     } catch {}

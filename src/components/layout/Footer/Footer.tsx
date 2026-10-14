@@ -55,7 +55,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
       <div className={cx("container", styles.bottom)}>
         <p>
-          © {new Date().getFullYear()} {siteConfig.legalName} · {site.region}. {layout.footer.rights}
+          © {new Date("2013").getFullYear()} {siteConfig.legalName} · {site.region}. {layout.footer.rights}
         </p>
         <nav aria-label={layout.footer.legalLabel}>
           <ul className={styles.legal}>

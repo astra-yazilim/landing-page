@@ -119,16 +119,17 @@ export const pages: PagesContent = {
     meta: {
       title: "About",
       description:
-        "Astra Yazılım is an Istanbul-based boutique engineering studio offering e-commerce and software engineering on accessible credit and subscription models.",
+        "Astra Yazılım is an Istanbul-based software company building web, mobile, e-commerce and automation projects, backed by software experience going back to 2009.",
     },
     eyebrow: "About",
-    title: { lead: "A boutique engineering studio.", accent: "An accessible model." },
+    title: { lead: "Software experience", accent: "going back to 2009." },
     description:
-      "We believe good engineering shouldn’t be something only big-budget companies can reach. That’s why we work on transparent credit and subscription models instead of hourly invoices.",
-    storyTitle: "Why we built this model",
+      "We build websites, e-commerce platforms, mobile apps and software that runs business operations. Every project starts the same way: a clear scope, a fee shared upfront and results we can measure.",
+    storyTitle: "Our story",
     story: [
-      "Most e-commerce businesses face the same problem: paying a platform developer a high hourly rate for a small change, or waiting weeks in an agency’s queue.",
-      "We break the work into small, clear tasks and state the cost of each one upfront. You know what you’ll pay and what you’ll get before we start.",
+      "Our team has been building software since 2009. Over that time we have worked on projects of every scale, from corporate websites and e-commerce platforms to mobile apps and internal management dashboards.",
+      "Along the way we saw where businesses struggle most: high hourly rates for a small change, or weeks of waiting in a queue.",
+      "Astra Yazılım was built on that experience. We break work into clear tasks and share each task’s scope and fee upfront, so you know what you’ll pay and what you’ll get before work begins.",
     ],
     principlesTitle: "How we work",
     principles: [

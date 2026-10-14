@@ -10,7 +10,7 @@ import { LeadModalProvider } from "@/components/lead/LeadModal/LeadModal";
 import { JsonLd } from "@/components/seo/JsonLd/JsonLd";
 import { ThemeSync } from "@/components/theme/ThemeSync/ThemeSync";
 import { seoConfig } from "@/config/seo";
-import { defaultTheme, siteConfig, themeStorageKey } from "@/config/site";
+import { defaultTheme, siteConfig, systemLightQuery, themeStorageKey } from "@/config/site";
 import { getContent } from "@/content";
 import { generateLocaleParams, resolveLocale, type LocaleParams } from "@/lib/params";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
@@ -38,7 +38,7 @@ const monoFont = JetBrains_Mono({
   display: "swap",
 });
 
-const themeScript = `(function(){try{var t=localStorage.getItem(${JSON.stringify(themeStorageKey)});if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",${JSON.stringify(siteConfig.themeColor)}[t]);}}catch(e){}})();`;
+const themeScript = `(function(){try{var t=null;try{t=localStorage.getItem(${JSON.stringify(themeStorageKey)});}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia(${JSON.stringify(systemLightQuery)}).matches?"light":"dark";}document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",${JSON.stringify(siteConfig.themeColor)}[t]);}catch(e){}})();`;
 
 export const generateStaticParams = generateLocaleParams;
 

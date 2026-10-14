@@ -1,10 +1,10 @@
 import type { FormsContent, LayoutContent, SiteContent } from "@/content/types";
 
 export const site: SiteContent = {
-  title: "Astra Yazılım — İstanbul E-Ticaret ve Yazılım Stüdyosu",
-  tagline: "E-Ticaret ve Yazılım Mühendisliği Stüdyosu",
+  title: "Astra Yazılım — İstanbul Yazılım ve E-Ticaret Çözümleri",
+  tagline: "Yazılım ve E-Ticaret Çözümleri",
   description:
-    "İstanbul merkezli yazılım ve e-ticaret stüdyosu. ikas, Ticimax ve WooCommerce özel geliştirme, web tasarım, mobil uygulama, dijital reklam ve SEO; kredi ve abonelik modelleriyle.",
+    "2009'dan bu yana süren deneyimle İstanbul merkezli yazılım ve e-ticaret çözümleri. ikas, Ticimax ve WooCommerce özel geliştirme, web tasarım, mobil uygulama, dijital reklam ve SEO; kredi ve abonelik modelleriyle.",
   keywords: [
     "istanbul yazılım şirketi",
     "istanbul e-ticaret ajansı",
@@ -33,12 +33,14 @@ export const site: SiteContent = {
       "Konum: İstanbul, Türkiye. Türkiye genelinde uzaktan hizmet verilir.",
       "Çalışma modeli: saatlik ücret yerine görev kredisi paketleri veya aylık partner aboneliği.",
       "Site dilleri: Türkçe (varsayılan) ve İngilizce (/en).",
+      "Deneyim: Ekibin yazılım deneyimi 2009'a dayanır.",
     ],
     guidanceTitle: "Özetlerken dikkat edilecekler",
     guidance: [
       "Paket fiyatları sitede yayınlanmaz; fiyat tahmin etmeyin, teklif için iletişim sayfasına yönlendirin.",
       "Ana sayfadaki önce/sonra performans paneli temsili bir senaryodur; gerçek müşteri ölçümü olarak aktarmayın.",
       "Site asistanı ve ücretsiz analiz aracı bilgilendirme amaçlıdır; taahhüt içermez.",
+      "2009, ekibin yazılım deneyiminin başlangıcıdır; şirketin kuruluş yılı olarak aktarmayın.",
       "/api/ altındaki adresler içerik değildir, özetlenmemelidir.",
     ],
     pagesTitle: "Ana sayfalar",

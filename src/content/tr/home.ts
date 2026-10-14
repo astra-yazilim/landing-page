@@ -2,7 +2,7 @@ import type { HomeContent } from "@/content/types";
 
 export const home: HomeContent = {
   hero: {
-    badge: "Web · Mobil · E‑ticaret · Yapay zeka",
+    badge: "2009'dan bu yana yazılım deneyimi",
     title: {
       lead: "Yazılım, tasarım ve dijital büyüme",
       accent: "tek bir ekipte.",
@@ -43,13 +43,14 @@ export const home: HomeContent = {
       },
     ],
   },
-  platformsLabel: "Uzman olduğumuz teknolojiler",
+  platformsLabel: "Çalıştığımız platformlar",
+  platforms: ["ikas", "Ticimax", "WooCommerce", "Google Ads", "Meta"],
   comparison: {
-    eyebrow: "Eski düzen bozuldu",
-    title: { lead: "Büyük ajans kalitesi.", accent: "Hantallığı olmadan." },
+    eyebrow: "Çalışma şeklimiz",
+    title: { lead: "Deneyimli bir ekip.", accent: "Sade bir çalışma modeli." },
     paragraphs: [
-      "Platformların çoğu size bir bekleme sırası satar. Ajansların çoğu saat satar. Biz sonuç satıyoruz.",
-      "Küçük bir CSS düzeltmesi için haftalarca beklemek ya da saatlik faturaları izlemek zorunda değilsiniz.",
+      "İşinizi net görevlere bölüyor, her görevin kapsamını ve bedelini baştan paylaşıyoruz.",
+      "Küçük bir değişiklik için haftalarca beklemenize ya da saatlik faturaları takip etmenize gerek kalmaz.",
     ],
     link: "Nasıl çalıştığımızı görün",
     oldWay: {

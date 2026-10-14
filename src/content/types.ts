@@ -159,6 +159,7 @@ export type HomeContent = {
   };
   performance: { eyebrow: string; title: string; states: PerformanceState[] };
   platformsLabel: string;
+  platforms: string[];
   comparison: {
     eyebrow: string;
     title: Title;

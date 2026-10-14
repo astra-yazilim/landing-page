@@ -16,14 +16,3 @@ export const serviceCatalog = [
 ] as const satisfies readonly { id: string; icon: IconName; accent: ServiceAccent; featured: boolean }[];
 
 export type ServiceId = (typeof serviceCatalog)[number]["id"];
-
-export const platforms = [
-  "ikas",
-  "Ticimax",
-  "WooCommerce",
-  "Next.js",
-  "React Native",
-  "Expo",
-  "Vercel",
-  "Cloudflare",
-];

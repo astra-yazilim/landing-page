@@ -2,7 +2,7 @@ import type { HomeContent } from "@/content/types";
 
 export const home: HomeContent = {
   hero: {
-    badge: "Web · Mobile · E‑commerce · AI",
+    badge: "Software experience since 2009",
     title: {
       lead: "Software, design and digital growth",
       accent: "in one team.",
@@ -43,13 +43,14 @@ export const home: HomeContent = {
       },
     ],
   },
-  platformsLabel: "Technologies we specialize in",
+  platformsLabel: "Platforms we work with",
+  platforms: ["ikas", "Ticimax", "WooCommerce", "Google Ads", "Meta"],
   comparison: {
-    eyebrow: "The old playbook is broken",
-    title: { lead: "Big agency quality.", accent: "Without the bloat." },
+    eyebrow: "How we work",
+    title: { lead: "An experienced team.", accent: "A simple way of working." },
     paragraphs: [
-      "Most platforms sell you a queue. Most agencies sell you hours. We sell you results.",
-      "You shouldn’t have to wait weeks for a minor CSS fix or watch hourly invoices pile up.",
+      "We break your work into clear tasks and share each task’s scope and fee upfront.",
+      "No waiting weeks for a small change, and no hourly invoices to keep track of.",
     ],
     link: "See how we work",
     oldWay: {
