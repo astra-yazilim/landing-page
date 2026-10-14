@@ -31,7 +31,7 @@ export const organizationSchema = (locale: Locale) => {
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     logo: absoluteUrl(siteConfig.logo),
-    image: absoluteUrl("/opengraph-image"),
+    image: absoluteUrl(seoConfig.ogImages[locale]),
     description: site.description,
     slogan: site.tagline,
     email: siteConfig.contact.email,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { defaultLocale, localeMeta, locales, type Locale } from "@/config/i18n";
 import { getPath, getServicePath, type RouteId } from "@/config/routes";
+import { seoConfig } from "@/config/seo";
 import { siteConfig } from "@/config/site";
 import { getContent } from "@/content";
 
@@ -43,6 +44,13 @@ export function buildMetadata({
 }: PageMetadataInput): Metadata {
   const paths = getLocalizedPaths(routeId, serviceSlugs);
   const url = absoluteUrl(paths[locale]);
+  const ogImage = {
+    url: absoluteUrl(seoConfig.ogImages[locale]),
+    width: 1200,
+    height: 630,
+    alt: siteConfig.name,
+    type: "image/jpeg",
+  };
   const fullTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`;
 
   return {
@@ -58,7 +66,8 @@ export function buildMetadata({
       siteName: siteConfig.name,
       locale: localeMeta[locale].ogLocale,
       alternateLocale: locales.filter((item) => item !== locale).map((item) => localeMeta[item].ogLocale),
+      images: [ogImage],
     },
-    twitter: { card: "summary_large_image", title: fullTitle, description },
+    twitter: { card: "summary_large_image", title: fullTitle, description, images: [ogImage] },
   };
 }

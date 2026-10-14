@@ -179,6 +179,50 @@ textarea {
   color: inherit;
 }
 
+input[type="checkbox"] {
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 5px;
+  background: rgb(var(--rgb-fg) / 0.04);
+  cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 70%;
+  height: 70%;
+  background: #fff;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transform: scale(0);
+  transition: transform 0.15s var(--ease-out);
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--color-brand);
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
 button {
   cursor: pointer;
 }

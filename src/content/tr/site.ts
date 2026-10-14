@@ -1,7 +1,7 @@
 import type { FormsContent, LayoutContent, SiteContent } from "@/content/types";
 
 export const site: SiteContent = {
-  title: "Astra Yazılım — İstanbul Yazılım ve E-Ticaret Çözümleri",
+  title: "Astra Yazılım — E-Ticaret, Web ve Yazılım Çözümleri",
   tagline: "Yazılım ve E-Ticaret Çözümleri",
   description:
     "2009'dan bu yana süren deneyimle İstanbul merkezli yazılım ve e-ticaret çözümleri. ikas, Ticimax ve WooCommerce özel geliştirme, web tasarım, mobil uygulama, dijital reklam ve SEO; kredi ve abonelik modelleriyle.",

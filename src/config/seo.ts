@@ -1,3 +1,4 @@
+import type { Locale } from "./i18n";
 import type { PageRouteId } from "./routes";
 
 export const seoConfig = {
@@ -14,6 +15,7 @@ export const seoConfig = {
     yandex: process.env.YANDEX_SITE_VERIFICATION ?? "",
     bing: process.env.BING_SITE_VERIFICATION ?? "",
   },
+  ogImages: { tr: "/og-cover.jpg", en: "/og-cover-en.jpg" } satisfies Record<Locale, string>,
   analytics: {
     googleMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-HLZYJNN0DW",
   },
