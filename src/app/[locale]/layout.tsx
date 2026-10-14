@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { Chatbot } from "@/components/chat/Chatbot/Chatbot";
+import { CookieConsent } from "@/components/consent/CookieConsent/CookieConsent";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider/LocaleProvider";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
@@ -116,6 +117,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
             <Footer locale={locale} />
             <Chatbot />
           </LeadModalProvider>
+          <CookieConsent />
         </LocaleProvider>
         <JsonLd data={[organizationSchema(locale), websiteSchema(locale)]} />
       </body>

@@ -490,7 +490,7 @@ export const pages: PagesContent = {
       title: "Gizlilik Politikası",
       description: "Astra Yazılım web sitesinde kişisel verilerinizin nasıl işlendiğine dair bilgilendirme.",
     },
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-10-14",
     updatedLabel: "Son güncelleme",
     sections: [
       {
@@ -519,8 +519,15 @@ export const pages: PagesContent = {
         ],
       },
       {
+        heading: "Çerezler ve analitik",
+        paragraphs: [
+          "Sitemiz, yalnızca onay vermeniz halinde Google Analytics çerezlerini (_ga ve _ga_ ile başlayanlar) kullanır. Bu çerezler; ziyaret edilen sayfalar, ziyaret süresi, yönlendiren kaynak ve cihaz türü gibi kullanım verilerini toplayarak sitemizi geliştirmemize yardımcı olur ve en fazla 2 yıl saklanır. Bu veriler Google LLC tarafından yurt dışındaki sunucularda işlenir; hukuki sebep, KVKK m.5/1 uyarınca açık rızanızdır.",
+          "Onay vermezseniz analitik çerez kullanılmaz. Tercihinizi sayfanın altındaki “Çerez tercihleri” bağlantısından istediğiniz zaman değiştirebilir, verdiğiniz onayı geri alabilirsiniz.",
+        ],
+      },
+      {
         heading: "Tarayıcı tercihleri",
-        paragraphs: ["Tema tercihiniz yalnızca tarayıcınızda saklanır ve sunucularımıza iletilmez."],
+        paragraphs: ["Tema ve çerez tercihleriniz yalnızca tarayıcınızda saklanır ve sunucularımıza iletilmez."],
       },
       {
         heading: "Haklarınız",

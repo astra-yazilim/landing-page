@@ -96,6 +96,15 @@ export const layout: LayoutContent = {
     skipToContent: "İçeriğe geç",
     learnMore: "Detayları incele",
   },
+  cookies: {
+    label: "Çerez onayı",
+    message:
+      "Sitenin nasıl kullanıldığını anlamak için Google Analytics çerezlerini kullanmak istiyoruz. Onay vermezseniz hiçbir analitik çerez kullanılmaz.",
+    policyLink: "Gizlilik Politikası",
+    accept: "Kabul et",
+    reject: "Reddet",
+    settings: "Çerez tercihleri",
+  },
   theme: {
     switchToLight: "Açık temaya geç",
     switchToDark: "Koyu temaya geç",

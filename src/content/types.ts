@@ -121,6 +121,14 @@ export type LayoutContent = {
     learnMore: string;
   };
   theme: { switchToLight: string; switchToDark: string };
+  cookies: {
+    label: string;
+    message: string;
+    policyLink: string;
+    accept: string;
+    reject: string;
+    settings: string;
+  };
   language: { label: string };
 };
 

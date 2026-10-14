@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookiePreferencesButton } from "@/components/consent/CookiePreferencesButton/CookiePreferencesButton";
 import { Button } from "@/components/ui/Button/Button";
 import { Logo } from "@/components/ui/Logo/Logo";
 import type { Locale } from "@/config/i18n";
@@ -67,6 +68,9 @@ export function Footer({ locale }: { locale: Locale }) {
                 <Link href={getPath(locale, routeId)}>{layout.nav[routeId]}</Link>
               </li>
             ))}
+            <li>
+              <CookiePreferencesButton label={layout.cookies.settings} className={styles.legalButton} />
+            </li>
           </ul>
         </nav>
       </div>

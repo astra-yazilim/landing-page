@@ -14,6 +14,9 @@ export const seoConfig = {
     yandex: process.env.YANDEX_SITE_VERIFICATION ?? "",
     bing: process.env.BING_SITE_VERIFICATION ?? "",
   },
+  analytics: {
+    googleMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-HLZYJNN0DW",
+  },
   disallowedPaths: ["/api/"],
   aiCrawlers: [
     "GPTBot",

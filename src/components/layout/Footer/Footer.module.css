@@ -117,9 +117,23 @@
   gap: 0 24px;
 }
 
-.legal a {
+.legal a,
+.legalButton {
   color: var(--color-muted);
   font-size: 0.75rem;
+}
+
+.legalButton {
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: color var(--duration) var(--ease-out);
+}
+
+.legalButton:hover {
+  color: var(--color-accent);
 }
 
 @keyframes pulse {

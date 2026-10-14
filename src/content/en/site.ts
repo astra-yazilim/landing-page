@@ -96,6 +96,15 @@ export const layout: LayoutContent = {
     skipToContent: "Skip to content",
     learnMore: "View details",
   },
+  cookies: {
+    label: "Cookie consent",
+    message:
+      "We’d like to use Google Analytics cookies to understand how the site is used. If you decline, no analytics cookies are set.",
+    policyLink: "Privacy Policy",
+    accept: "Accept",
+    reject: "Decline",
+    settings: "Cookie preferences",
+  },
   theme: {
     switchToLight: "Switch to light theme",
     switchToDark: "Switch to dark theme",

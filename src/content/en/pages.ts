@@ -470,7 +470,7 @@ export const pages: PagesContent = {
       title: "Privacy Policy",
       description: "How your personal data is processed on the Astra Yazılım website.",
     },
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-10-14",
     updatedLabel: "Last updated",
     sections: [
       {
@@ -499,8 +499,15 @@ export const pages: PagesContent = {
         ],
       },
       {
+        heading: "Cookies and analytics",
+        paragraphs: [
+          "Our site uses Google Analytics cookies (those starting with _ga and _ga_) only if you give consent. These cookies help us improve the site by collecting usage data such as pages visited, visit duration, referring source and device type, and are kept for up to 2 years. This data is processed by Google LLC on servers abroad; the legal basis is your explicit consent under Article 5(1) of Law No. 6698.",
+          "If you decline, no analytics cookies are set. You can change your choice or withdraw your consent at any time via the “Cookie preferences” link at the bottom of the page.",
+        ],
+      },
+      {
         heading: "Browser preferences",
-        paragraphs: ["Your theme preference is stored only in your browser and is not sent to our servers."],
+        paragraphs: ["Your theme and cookie preferences are stored only in your browser and are not sent to our servers."],
       },
       {
         heading: "Your rights",
