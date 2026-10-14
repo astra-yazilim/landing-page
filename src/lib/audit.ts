@@ -28,8 +28,11 @@ export type AuditIssue = {
 export type AuditResult = {
   url: string;
   strategy: AuditStrategy;
+  measuredAt: number;
   scores: { id: AuditCategoryId; value: number }[];
   metrics: { id: AuditMetricId; value: string; critical: boolean }[];
   opportunities: string[];
   issues: AuditIssue[];
 };
+
+export type SignedAuditResult = AuditResult & { token?: string };

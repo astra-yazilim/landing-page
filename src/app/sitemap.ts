@@ -16,6 +16,8 @@ const staticEntries: { routeId: RouteId; priority: number; changeFrequency: Chan
   { routeId: "audit", priority: 0.8, changeFrequency: "monthly" },
   { routeId: "contact", priority: 0.8, changeFrequency: "yearly" },
   { routeId: "about", priority: 0.6, changeFrequency: "yearly" },
+  { routeId: "developers", priority: 0.7, changeFrequency: "monthly" },
+  { routeId: "developerAgreement", priority: 0.2, changeFrequency: "yearly" },
   { routeId: "privacy", priority: 0.2, changeFrequency: "yearly" },
   { routeId: "terms", priority: 0.2, changeFrequency: "yearly" },
 ];

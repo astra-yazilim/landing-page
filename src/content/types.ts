@@ -5,6 +5,13 @@ import type { ProductId } from "@/config/products";
 import type { ProjectId, ProjectPlatform } from "@/config/projects";
 import type { ServiceId } from "@/config/services";
 import type { AuditCategoryId, AuditMetricId, AuditStrategy } from "@/lib/audit";
+import type {
+  DeveloperAvailabilityId,
+  DeveloperExperienceId,
+  DeveloperSkillId,
+  DeveloperWorkModelId,
+} from "@/config/developers";
+import type { DeveloperValidationKey } from "@/lib/developers";
 
 export type TemplateFeature = "shop" | "blog" | "portfolio" | "onePage";
 
@@ -98,7 +105,14 @@ export type SiteContent = {
 
 export type LayoutContent = {
   nav: Record<RouteId, string>;
-  header: { cta: string; openMenu: string; closeMenu: string; navLabel: string; mobileNavLabel: string };
+  header: {
+    cta: string;
+    developerCta: string;
+    openMenu: string;
+    closeMenu: string;
+    navLabel: string;
+    mobileNavLabel: string;
+  };
   footer: { pagesTitle: string; servicesTitle: string; legalLabel: string; rights: string; cta: string };
   common: {
     breadcrumbLabel: string;
@@ -179,6 +193,21 @@ export type HomeContent = {
     causesLabel: string;
     explanations: Record<AuditCategoryId | AuditMetricId, string>;
     opportunitiesTitle: string;
+    report: {
+      title: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      submitLabel: string;
+      sendingLabel: string;
+      successText: string;
+      errorText: string;
+      marketingLabel: string;
+      privacyNote: string;
+      subject: (host: string) => string;
+      intro: string;
+      cta: string;
+      footer: string;
+    };
     resultCta: string;
     retryLabel: string;
     categories: Record<"performance" | "seo" | "accessibility" | "best-practices", string>;
@@ -229,6 +258,55 @@ export type ChatbotContent = {
   disclaimer: string;
   suggestions: string[];
   intents: ChatIntent[];
+};
+
+type FieldText = { label: string; placeholder: string };
+
+type ConsentText = { before: string; linkLabel: string; after: string };
+
+export type DeveloperFormContent = {
+  title: string;
+  description: string;
+  groups: Record<"personal" | "profile" | "work" | "consent", string>;
+  fields: Record<
+    | "name"
+    | "email"
+    | "phone"
+    | "location"
+    | "title"
+    | "experience"
+    | "linkedin"
+    | "github"
+    | "portfolio"
+    | "otherSkills"
+    | "availability"
+    | "rate"
+    | "about",
+    FieldText
+  >;
+  skillsLabel: string;
+  skills: Record<DeveloperSkillId, string>;
+  experience: Record<DeveloperExperienceId, string>;
+  workModelsLabel: string;
+  workModels: Record<DeveloperWorkModelId, string>;
+  availability: Record<DeveloperAvailabilityId, string>;
+  cv: { label: string; hint: string };
+  privacyConsent: ConsentText;
+  agreementConsent: ConsentText;
+  submitLabel: string;
+  submittingLabel: string;
+  successTitle: string;
+  successText: string;
+  errorText: string;
+  validation: Record<DeveloperValidationKey, string>;
+  email: {
+    applicantSubject: string;
+    applicantGreeting: (name: string) => string;
+    applicantText: string;
+    agreementLink: string;
+    teamSubject: (name: string, title: string) => string;
+    teamCvNote: string;
+  };
 };
 
 export type PagesContent = {
@@ -285,6 +363,24 @@ export type PagesContent = {
     sourceNote: (sourceName: string) => string;
   };
   pricing: { meta: PageMeta; eyebrow: string; title: Title; description: string; faqTitle: string };
+  developers: {
+    meta: PageMeta;
+    eyebrow: string;
+    title: Title;
+    description: string;
+    primaryCta: string;
+    secondaryCta: string;
+    stepsTitle: string;
+    steps: IconStep[];
+    modelsTitle: string;
+    models: IconStep[];
+    benefitsTitle: string;
+    benefits: IconStep[];
+    faqTitle: string;
+    faq: FaqItem[];
+    form: DeveloperFormContent;
+  };
+  developerAgreement: { meta: PageMeta; updatedAt: string; updatedLabel: string; sections: LegalSection[] };
   audit: { meta: PageMeta; stepsTitle: string; steps: IconStep[] };
   about: {
     meta: PageMeta;

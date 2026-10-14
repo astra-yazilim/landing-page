@@ -138,7 +138,7 @@ export const projectListSchema = (locale: Locale, items: Project[]) => ({
 
 export const pageSchema = (
   locale: Locale,
-  type: "AboutPage" | "ContactPage",
+  type: "AboutPage" | "ContactPage" | "WebPage",
   routeId: PageRouteId,
   meta: { title: string; description: string },
 ) => ({

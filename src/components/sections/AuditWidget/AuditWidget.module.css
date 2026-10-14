@@ -387,6 +387,65 @@
   color: var(--color-warning);
 }
 
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.reportTitle {
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.reportConsent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.reportConsent input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--color-brand);
+  flex-shrink: 0;
+}
+
+.reportNote {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.reportNote a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reportSent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .resultFooter,
 .unavailableActions {
   display: flex;

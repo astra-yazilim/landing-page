@@ -1,5 +1,13 @@
 import {
   AppWindow,
+  BadgeCheck,
+  Briefcase,
+  CalendarClock,
+  FileText,
+  Handshake,
+  ShieldCheck,
+  Upload,
+  Wallet,
   Globe,
   LayoutGrid,
   Monitor,
@@ -53,6 +61,14 @@ import {
 
 const icons = {
   appWindow: AppWindow,
+  badgeCheck: BadgeCheck,
+  briefcase: Briefcase,
+  calendar: CalendarClock,
+  fileText: FileText,
+  handshake: Handshake,
+  shield: ShieldCheck,
+  upload: Upload,
+  wallet: Wallet,
   globe: Globe,
   grid: LayoutGrid,
   monitor: Monitor,

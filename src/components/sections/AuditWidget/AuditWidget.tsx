@@ -1,19 +1,22 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useId, useState, type FormEvent } from "react";
 import { LeadButton } from "@/components/lead/LeadButton/LeadButton";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { useContent, useLocale } from "@/components/i18n/LocaleProvider/LocaleProvider";
-import { auditStrategies, criticalScore, type AuditResult, type AuditStrategy } from "@/lib/audit";
-import { cx, normalizeWebsiteUrl } from "@/lib/text";
+import { getPath } from "@/config/routes";
+import { auditStrategies, criticalScore, type AuditStrategy, type SignedAuditResult } from "@/lib/audit";
+import { cx, isValidEmail, normalizeWebsiteUrl } from "@/lib/text";
 import styles from "./AuditWidget.module.css";
 
 type AuditStatus = "idle" | "loading" | "result" | "unavailable";
 
 const loadingStepInterval = 3500;
 
-type AuditResults = Partial<Record<AuditStrategy, AuditResult>>;
+type ReportStatus = "idle" | "sending" | "sent" | "error";
+type AuditResults = Partial<Record<AuditStrategy, SignedAuditResult>>;
 
 const scoreTone = (value: number) => (value >= 90 ? "good" : value >= criticalScore ? "average" : "poor");
 
@@ -33,12 +36,23 @@ export function AuditWidget() {
   const inputId = useId();
   const errorId = `${inputId}-error`;
   const strategyId = `${inputId}-strategy`;
+  const reportEmailId = `${inputId}-report-email`;
+  const reportErrorId = `${inputId}-report-error`;
+  const marketingId = `${inputId}-marketing`;
+  const trapId = `${inputId}-company`;
   const [inputValue, setInputValue] = useState("");
   const [status, setStatus] = useState<AuditStatus>("idle");
   const [inputError, setInputError] = useState("");
   const [results, setResults] = useState<AuditResults>({});
   const [strategy, setStrategy] = useState<AuditStrategy>(auditStrategies[0]);
   const result = results[strategy];
+  const [reportStatus, setReportStatus] = useState<ReportStatus>("idle");
+  const [reportEmail, setReportEmail] = useState("");
+  const [reportError, setReportError] = useState("");
+  const [marketingConsent, setMarketingConsent] = useState(false);
+  const [company, setCompany] = useState("");
+  const reports = auditStrategies.flatMap((item) => results[item] ?? []);
+  const canEmailReport = reports.some((report) => report.token);
   const [submittedUrl, setSubmittedUrl] = useState("");
   const [loadingStep, setLoadingStep] = useState(0);
 
@@ -68,7 +82,7 @@ export function AuditWidget() {
       auditStrategies.map(async (item) => {
         const response = await fetch(`/api/audit?url=${encodeURIComponent(url)}&locale=${locale}&strategy=${item}`);
         if (!response.ok) throw new Error("unavailable");
-        return (await response.json()) as AuditResult;
+        return (await response.json()) as SignedAuditResult;
       }),
     );
     const measured: AuditResults = {};
@@ -89,6 +103,29 @@ export function AuditWidget() {
   const reset = () => {
     setStatus("idle");
     setResults({});
+    setReportStatus("idle");
+    setReportError("");
+  };
+
+  const handleReportSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!isValidEmail(reportEmail)) {
+      setReportError(forms.validation.email);
+      return;
+    }
+
+    setReportError("");
+    setReportStatus("sending");
+    try {
+      const response = await fetch("/api/audit/report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: reportEmail, locale, reports, marketingConsent, company }),
+      });
+      setReportStatus(response.ok ? "sent" : "error");
+    } catch {
+      setReportStatus("error");
+    }
   };
 
   const leadDefaults = { source: "audit-widget", website: submittedUrl, service: forms.auditOption };
@@ -247,6 +284,74 @@ export function AuditWidget() {
                 ))}
               </ul>
             </div>
+          ) : null}
+
+          {canEmailReport ? (
+            reportStatus === "sent" ? (
+              <p className={styles.reportSent} role="status">
+                <Icon name="check" size={16} />
+                {auditContent.report.successText}
+              </p>
+            ) : (
+              <form className={styles.report} onSubmit={handleReportSubmit} noValidate>
+                <label htmlFor={reportEmailId} className={styles.reportTitle}>
+                  {auditContent.report.title}
+                </label>
+                <div className={styles.inputRow}>
+                  <input
+                    id={reportEmailId}
+                    className={styles.input}
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    placeholder={auditContent.report.emailPlaceholder}
+                    aria-label={auditContent.report.emailLabel}
+                    value={reportEmail}
+                    onChange={(event) => {
+                      setReportEmail(event.target.value);
+                      setReportError("");
+                    }}
+                    disabled={reportStatus === "sending"}
+                    aria-invalid={Boolean(reportError)}
+                    aria-describedby={reportError ? reportErrorId : undefined}
+                  />
+                  <Button type="submit" icon="send" disabled={reportStatus === "sending"} className={styles.submit}>
+                    {reportStatus === "sending" ? auditContent.report.sendingLabel : auditContent.report.submitLabel}
+                  </Button>
+                </div>
+                {reportError || reportStatus === "error" ? (
+                  <p id={reportErrorId} className={styles.error} role="alert">
+                    {reportError || auditContent.report.errorText}
+                  </p>
+                ) : null}
+                <div className={styles.trap} aria-hidden="true">
+                  <label htmlFor={trapId}>{forms.trapLabel}</label>
+                  <input
+                    id={trapId}
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={company}
+                    onChange={(event) => setCompany(event.target.value)}
+                  />
+                </div>
+                <div className={styles.reportConsent}>
+                  <input
+                    id={marketingId}
+                    type="checkbox"
+                    checked={marketingConsent}
+                    onChange={(event) => setMarketingConsent(event.target.checked)}
+                  />
+                  <label htmlFor={marketingId}>{auditContent.report.marketingLabel}</label>
+                </div>
+                <p className={styles.reportNote}>
+                  {auditContent.report.privacyNote}
+                  <Link href={getPath(locale, "privacy")} target="_blank">
+                    {forms.consent.linkLabel}
+                  </Link>
+                </p>
+              </form>
+            )
           ) : null}
 
           <div className={styles.resultFooter}>

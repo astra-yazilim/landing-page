@@ -182,6 +182,22 @@ export const home: HomeContent = {
         "Görünür alan yavaş doluyor; içerik parça parça geliyor. Kaynak genellikle oluşturmayı engelleyen dosyalar, ağır JavaScript ve geç yüklenen görsellerdir.",
     },
     opportunitiesTitle: "Öne çıkan iyileştirme fırsatları",
+    report: {
+      title: "Sonucu e-posta adresime gönder",
+      emailLabel: "E-posta adresiniz",
+      emailPlaceholder: "ornek@sirket.com",
+      submitLabel: "Raporu gönder",
+      sendingLabel: "Gönderiliyor…",
+      successText: "Rapor e-posta adresinize gönderildi.",
+      errorText: "Rapor gönderilemedi. Lütfen tekrar deneyin.",
+      marketingLabel:
+        "Sitemle ilgili iyileştirme önerileri ve kampanyalardan e-posta ile haberdar olmak istiyorum.",
+      privacyNote: "E-posta adresiniz raporu size iletmek için işlenir. ",
+      subject: (host) => `${host} için site hızı raporunuz`,
+      intro: "Sitenizin mobil ve masaüstü ölçüm sonuçları aşağıda.",
+      cta: "Ücretsiz ilk düzeltme için bize ulaşın",
+      footer: "Bu e-postayı, sitemizdeki hız ölçümünün sonucunu e-posta ile istediğiniz için aldınız.",
+    },
     resultCta: "Detaylı rapor ve ücretsiz ilk düzeltme",
     retryLabel: "Başka bir adres dene",
     categories: {

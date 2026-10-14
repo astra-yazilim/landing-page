@@ -9,6 +9,7 @@ import {
   type AuditIssue,
   type AuditResult,
 } from "@/lib/audit";
+import { signAuditResult } from "@/lib/auditReport";
 import { normalizeWebsiteUrl } from "@/lib/text";
 
 export const maxDuration = 60;
@@ -127,6 +128,7 @@ export async function GET(request: Request) {
     const result: AuditResult = {
       url: targetUrl,
       strategy,
+      measuredAt: Date.now(),
       scores: auditCategoryIds.flatMap((id) => {
         const score = categories[id]?.score;
         return typeof score === "number" ? [{ id, value: Math.round(score * 100) }] : [];
@@ -153,7 +155,7 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: "unavailable" }, { status: 502 });
     }
 
-    return NextResponse.json(result);
+    return NextResponse.json(signAuditResult(result));
   } catch {
     return NextResponse.json({ error: "unavailable" }, { status: 502 });
   }

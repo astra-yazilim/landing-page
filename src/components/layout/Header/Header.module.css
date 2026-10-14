@@ -88,8 +88,42 @@
   width: 100%;
 }
 
-.desktopCta {
+.developerLink {
   display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color var(--duration) var(--ease-out);
+}
+
+.developerLink svg {
+  color: var(--color-accent);
+}
+
+.developerLink:hover,
+.developerLink.active {
+  color: var(--color-heading);
+}
+
+.drawerDeveloper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.drawerDeveloper svg {
+  color: var(--color-accent);
 }
 
 .menuButton {
@@ -186,7 +220,7 @@
 }
 
 @media (min-width: 860px) {
-  .desktopCta {
+  .developerLink {
     display: inline-flex;
   }
 }
