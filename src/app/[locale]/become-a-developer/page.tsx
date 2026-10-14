@@ -12,7 +12,7 @@ import { getPath } from "@/config/routes";
 import { getContent } from "@/content";
 import type { IconStep } from "@/content/types";
 import { resolveLocale, type LocaleParams } from "@/lib/params";
-import { pageSchema } from "@/lib/schema";
+import { faqSchema, pageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
@@ -47,7 +47,7 @@ export default async function DevelopersPage({ params }: LocaleParams) {
 
   return (
     <div className="container">
-      <JsonLd data={pageSchema(locale, "WebPage", "developers", page.meta)} />
+      <JsonLd data={[pageSchema(locale, "WebPage", "developers", page.meta), faqSchema(page.faq)]} />
       <PageHero
         locale={locale}
         crumbs={[{ label: page.meta.title, href: getPath(locale, "developers") }]}

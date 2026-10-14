@@ -3,9 +3,11 @@ import { AuditPanel } from "@/components/sections/AuditPanel/AuditPanel";
 import { ClosingCta } from "@/components/sections/ClosingCta/ClosingCta";
 import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { ProcessSteps } from "@/components/sections/ProcessSteps/ProcessSteps";
+import { JsonLd } from "@/components/seo/JsonLd/JsonLd";
 import { getPath } from "@/config/routes";
 import { getContent } from "@/content";
 import { resolveLocale, type LocaleParams } from "@/lib/params";
+import { pageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
@@ -20,6 +22,7 @@ export default async function AuditPage({ params }: LocaleParams) {
 
   return (
     <>
+      <JsonLd data={pageSchema(locale, "WebPage", "audit", page.meta)} />
       <div className="container">
         <PageHero locale={locale} crumbs={[{ label: page.meta.title, href: getPath(locale, "audit") }]} />
         <div className={styles.panel}>
