@@ -164,42 +164,44 @@
 }
 
 .metric {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.metricHead {
+  position: relative;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
+  padding-bottom: 14px;
   font-size: 0.875rem;
 }
 
-.metricHead dt {
+.metric dt {
   color: var(--color-muted);
 }
 
-.metricHead dd {
+.metric dd {
   margin: 0;
   color: var(--color-heading);
   font-family: var(--font-mono), monospace;
   font-variant-numeric: tabular-nums;
 }
 
-.bar {
+.metric::before,
+.metric::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 6px;
   border-radius: var(--radius-pill);
-  background: var(--track);
-  overflow: hidden;
 }
 
-.barFill {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
+.metric::before {
+  background: var(--track);
+}
+
+.metric::after {
   background: linear-gradient(90deg, rgb(var(--state-rgb) / 0.5), var(--state-color));
+  transform: scaleX(var(--ratio));
   transform-origin: left center;
   transition:
     transform 0.9s var(--ease-out),

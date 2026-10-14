@@ -7,7 +7,7 @@ export const siteConfig = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://astrayazilim.com.tr/").replace(/\/$/, ""),
   themeColor: { dark: "#0B0F17", light: "#F6F8FB" },
   contact: {
-    email: "info@astrayazilim.com",
+    email: "info@astrayazilim.com.tr",
     phone: "" as string,
     whatsapp: "" as string,
     country: "TR",

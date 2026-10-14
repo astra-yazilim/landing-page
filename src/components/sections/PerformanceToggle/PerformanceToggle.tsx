@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, motion, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useContent } from "@/components/i18n/LocaleProvider/LocaleProvider";
 import type { PerformanceState } from "@/content/types";
 import { cx } from "@/lib/text";
@@ -98,14 +98,9 @@ export function PerformanceToggle() {
 
       <dl className={styles.metrics}>
         {activeState.metrics.map((metric) => (
-          <div key={metric.label} className={styles.metric}>
-            <div className={styles.metricHead}>
-              <dt>{metric.label}</dt>
-              <dd>{metric.value}</dd>
-            </div>
-            <div className={styles.bar} aria-hidden="true">
-              <span className={styles.barFill} style={{ transform: `scaleX(${metric.ratio})` }} />
-            </div>
+          <div key={metric.label} className={styles.metric} style={{ "--ratio": metric.ratio } as CSSProperties}>
+            <dt>{metric.label}</dt>
+            <dd>{metric.value}</dd>
           </div>
         ))}
       </dl>

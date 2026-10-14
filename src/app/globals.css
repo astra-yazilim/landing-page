@@ -3,9 +3,9 @@
 
   --color-bg: #0b0f17;
   --color-bg-deep: #070a0f;
-  --color-brand: #10b981;
-  --color-brand-hover: #34d399;
-  --color-on-brand: #03130d;
+  --color-brand: #047857;
+  --color-brand-hover: #065f46;
+  --color-on-brand: #ffffff;
   --color-accent: #34d399;
   --color-accent-alt: #a5b4fc;
   --color-indigo: #6366f1;
@@ -61,7 +61,6 @@
 
   --color-bg: #f6f8fb;
   --color-bg-deep: #eef2f7;
-  --color-brand-hover: #0ea371;
   --color-accent: #047857;
   --color-accent-alt: #4338ca;
   --color-warning: #b45309;
