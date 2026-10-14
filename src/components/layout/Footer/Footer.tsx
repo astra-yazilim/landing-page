@@ -59,7 +59,7 @@ export function Footer({ locale }: { locale: Locale }) {
         </p>
         <nav aria-label={layout.footer.legalLabel}>
           <ul className={styles.legal}>
-            🇵🇸
+            <li>🇵🇸</li>
             <li>
               <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
             </li>
