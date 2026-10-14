@@ -120,9 +120,9 @@ export const faq: { general: FaqItem[]; pricing: FaqItem[] } = {
     creditSystem,
     modelDifference,
     {
-      question: "Are the free audit and first fix really free?",
+      question: "Is the issue review really free?",
       answer:
-        "Yes. We analyze your site and fix the first minor UI or speed issue we find for free. You’re under no obligation to continue.",
+        "Yes. We review your site and share the root causes and our recommendations in a free 15-minute call. You’re under no obligation to continue with us.",
     },
     {
       question: "Which platforms and technologies do you work with?",

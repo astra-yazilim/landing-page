@@ -83,7 +83,7 @@ export const chatbot: ChatbotContent = {
       id: "audit",
       keywords: ["audit", "free", "speed", "pagespeed", "slow", "performance", "lighthouse", "analysis"],
       answer:
-        "Enter your site URL and we’ll measure mobile speed and UI bottlenecks. We also fix the first minor issue we find for free.",
+        "Enter your site URL and we’ll measure mobile speed and UI bottlenecks. Our team also reviews the results by hand and walks you through the root causes in a free 15-minute call.",
       link: { label: "Get a free audit", route: "audit" },
     },
     {
@@ -102,9 +102,9 @@ export const chatbot: ChatbotContent = {
     },
     {
       id: "automation",
-      keywords: ["automation", "automate", "artificial intelligence", "ai", "crm", "erp", "integration", "dashboard"],
+      keywords: ["automation", "automate", "artificial intelligence", "ai", "crm", "erp", "integration", "dashboard", "excel", "rpa", "macro", "robot", "data entry"],
       answer:
-        "We build internal dashboards, CRM/ERP integrations and AI-assisted automations that remove repetitive work.",
+        "We build internal dashboards, CRM/ERP integrations, Excel and RPA automations, and AI-assisted workflows that cut down repetitive work.",
       link: { label: "Automation service", route: "services", service: "automation" },
     },
     {
@@ -117,7 +117,7 @@ export const chatbot: ChatbotContent = {
     {
       id: "hosting",
       keywords: ["hosting", "server", "maintenance", "support", "vercel", "cloudflare", "emergency"],
-      answer: "We provide Vercel and Cloudflare setup, zero-downtime maintenance and emergency support for critical issues.",
+      answer: "We provide Vercel and Cloudflare setup, regular maintenance and emergency support for critical issues.",
       link: { label: "Hosting & care", route: "services", service: "hosting" },
     },
     {

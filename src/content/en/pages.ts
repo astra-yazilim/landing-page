@@ -98,7 +98,7 @@ export const pages: PagesContent = {
     meta: {
       title: "Free Site Audit",
       description:
-        "Measure your site’s mobile speed and Core Web Vitals for free. We’ll fix your first minor speed or UI issue at no cost.",
+        "Measure your site’s mobile and desktop speed and Core Web Vitals for free, then talk through the root causes with us in a free 15-minute call.",
     },
     stepsTitle: "How does the audit work?",
     steps: [
@@ -109,8 +109,8 @@ export const pages: PagesContent = {
         icon: "gauge",
       },
       {
-        title: "First fix is on us",
-        text: "Our team also reviews your site by hand and fixes the first minor issue for free.",
+        title: "Free issue review",
+        text: "Our team also reviews your site by hand and walks you through our findings and recommendations in a 15-minute phone or video call.",
         icon: "sparkles",
       },
     ],

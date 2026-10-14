@@ -84,7 +84,7 @@ export const chatbot: ChatbotContent = {
       id: "audit",
       keywords: ["analiz", "ucretsiz", "hiz", "pagespeed", "yavas", "performans", "lighthouse"],
       answer:
-        "Site adresinizi girin; mobil hız ve arayüz darboğazlarını ölçelim. Tespit ettiğimiz ilk küçük sorunu da ücretsiz düzeltiyoruz.",
+        "Site adresinizi girin; mobil hız ve arayüz darboğazlarını ölçelim. Ekibimiz sonuçları elle de inceleyip sorunların kaynağını 15 dakikalık ücretsiz bir görüşmede anlatır.",
       link: { label: "Ücretsiz analiz al", route: "audit" },
     },
     {
@@ -103,9 +103,9 @@ export const chatbot: ChatbotContent = {
     },
     {
       id: "automation",
-      keywords: ["otomasyon", "yapay zeka", "ai", "crm", "erp", "entegrasyon", "panel"],
+      keywords: ["otomasyon", "yapay zeka", "ai", "crm", "erp", "entegrasyon", "panel", "excel", "rpa", "makro", "robot", "veri girisi"],
       answer:
-        "İç paneller, CRM/ERP entegrasyonları ve tekrarlayan işleri ortadan kaldıran yapay zeka destekli otomasyonlar kuruyoruz.",
+        "İç paneller, CRM/ERP entegrasyonları, Excel ve RPA otomasyonları ile tekrarlayan işleri azaltan yapay zeka destekli akışlar kuruyoruz.",
       link: { label: "Otomasyon hizmeti", route: "services", service: "automation" },
     },
     {
@@ -118,7 +118,7 @@ export const chatbot: ChatbotContent = {
     {
       id: "hosting",
       keywords: ["hosting", "sunucu", "bakim", "destek", "vercel", "cloudflare", "acil"],
-      answer: "Vercel ve Cloudflare kurulumu, kesintisiz bakım ve kritik durumlar için acil destek sağlıyoruz.",
+      answer: "Vercel ve Cloudflare kurulumu, düzenli bakım ve kritik durumlar için acil destek sağlıyoruz.",
       link: { label: "Hosting ve bakım", route: "services", service: "hosting" },
     },
     {

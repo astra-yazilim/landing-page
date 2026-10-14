@@ -7,7 +7,7 @@ export const services: Record<ServiceId, ServiceText> = {
     title: "E-Commerce Infrastructure & Custom Development",
     shortTitle: "E-Commerce Development",
     summary:
-      "Deep custom code for ikas, Ticimax and WooCommerce. Custom UI/UX, checkout optimization, CAPI/GTM setups and instant speed boosts.",
+      "Deep custom code for ikas, Ticimax and WooCommerce. Custom UI/UX, checkout optimization, CAPI/GTM setups and speed improvements.",
     description:
       "We start where the stock theme ends. Without touching your store’s core, we write custom code wherever the platform allows and measure and improve every step from cart to checkout.",
     tags: ["ikas", "Ticimax", "WooCommerce", "CAPI", "GTM", "Checkout"],
@@ -25,8 +25,8 @@ export const services: Record<ServiceId, ServiceText> = {
         text: "We configure Meta CAPI, GA4 and GTM to run server-side and consistently.",
       },
       {
-        title: "Instant speed boost",
-        text: "We strip out image, script and third-party weight and move your store toward a 1-second load target.",
+        title: "Speed improvements",
+        text: "We reduce image, script and third-party weight to improve your store’s load time and Core Web Vitals.",
       },
     ],
     deliverables: [
@@ -52,7 +52,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "web-design-and-high-speed-apps",
     title: "Web Design & High-Speed Apps",
     shortTitle: "Web Design",
-    summary: "Next.js, modern CSS and Headless CMS. Zero lag, 100/100 Lighthouse scores.",
+    summary: "Speed- and accessibility-first sites built with Next.js, modern CSS and a Headless CMS.",
     description:
       "We build corporate sites, product landing pages and web apps that treat performance as part of the design.",
     tags: ["Next.js", "Headless CMS", "Lighthouse"],
@@ -63,7 +63,7 @@ export const services: Record<ServiceId, ServiceText> = {
       },
       {
         title: "Performance-first architecture",
-        text: "Pages that open instantly thanks to server rendering, smart caching and optimized images.",
+        text: "Fast-loading pages thanks to server rendering, smart caching and optimized images.",
       },
       {
         title: "Easy content management",
@@ -88,7 +88,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "cross-platform-mobile-apps",
     title: "Cross-Platform Mobile Apps",
     shortTitle: "Mobile Apps",
-    summary: "React Native / Expo iOS and Android apps synced seamlessly with your store.",
+    summary: "React Native / Expo iOS and Android apps that stay in sync with your store’s data.",
     description:
       "We build apps that ship to both platforms from a single codebase and work in real time with your store’s product, stock and order data.",
     tags: ["React Native", "Expo", "iOS", "Android"],
@@ -123,10 +123,10 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "custom-software-and-ai-automations",
     title: "Custom Software & AI Automations",
     shortTitle: "Software & Automation",
-    summary: "Internal dashboards, CRM/ERP integrations and automated workflows that eliminate manual work.",
+    summary: "Internal dashboards, CRM/ERP integrations, Excel and RPA automations, and workflows that cut down manual work.",
     description:
       "We find the tasks your team repeats every day and hand them over to software. Your systems talk to each other while you focus on growth.",
-    tags: ["Automation", "CRM/ERP", "AI", "Dashboards"],
+    tags: ["Automation", "AI", "RPA", "Excel", "CRM/ERP", "Dashboards"],
     features: [
       {
         title: "Internal dashboards",
@@ -140,10 +140,15 @@ export const services: Record<ServiceId, ServiceText> = {
         title: "AI-assisted workflows",
         text: "Automations that classify customer messages, generate content and prepare reports.",
       },
+      {
+        title: "Data & Excel automation (RPA)",
+        text: "Software robots that automate Excel and Google Sheets reports, file transfers and data entry into web portals, and pull data from email attachments and PDFs.",
+      },
     ],
     deliverables: [
       "Needs analysis and process map",
       "Custom dashboard or integration service",
+      "Excel macros, scripts or RPA robots",
       "Automation scenarios and monitoring screen",
       "Documentation and team training",
     ],
@@ -153,13 +158,18 @@ export const services: Record<ServiceId, ServiceText> = {
         answer:
           "Any task with clear rules that repeats regularly: order transfer, stock sync, invoicing, reporting and routing customer messages, for example.",
       },
+      {
+        question: "Can you automate the work we run in Excel?",
+        answer:
+          "Yes. We automate copy-paste spreadsheet work, recurring reports and data entry into web portals using Excel macros (VBA), Python scripts or RPA robots, depending on the need. Where possible, we keep the Excel setup your team is used to.",
+      },
     ],
   },
   seo: {
     slug: "growth-and-technical-seo",
     title: "Growth & Technical SEO",
     shortTitle: "Technical SEO",
-    summary: "Schema markup, conversion rate optimization (CRO) and search dominance.",
+    summary: "Schema markup, conversion rate optimization (CRO) and search visibility.",
     description:
       "Growing traffic isn’t enough; visitors need to buy. We treat technical SEO and conversion optimization as one job.",
     tags: ["Schema", "CRO", "Core Web Vitals"],
@@ -195,7 +205,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "cloud-hosting-and-24-7-care",
     title: "Cloud Hosting & 24/7 Care",
     shortTitle: "Hosting & Care",
-    summary: "Vercel / Cloudflare setups, zero-downtime maintenance and instant emergency support.",
+    summary: "Vercel / Cloudflare setups, regular maintenance and emergency support.",
     description:
       "We stay with you after launch. We set up and monitor the infrastructure and step in when something goes wrong, before you notice.",
     tags: ["Vercel", "Cloudflare", "Monitoring"],
@@ -205,8 +215,8 @@ export const services: Record<ServiceId, ServiceText> = {
         text: "Global delivery, caching and security layers on Vercel and Cloudflare.",
       },
       {
-        title: "Zero-downtime maintenance",
-        text: "Updates and releases happen without your visitors noticing anything.",
+        title: "Planned maintenance",
+        text: "We plan and roll out updates and releases to keep the impact on your visitors to a minimum.",
       },
       {
         title: "Emergency support",

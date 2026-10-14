@@ -2,16 +2,16 @@ import type { HomeContent } from "@/content/types";
 
 export const home: HomeContent = {
   hero: {
-    badge: "Stop paying $200+/hr to platforms & legacy agencies",
+    badge: "Web · Mobile · E‑commerce · AI",
     title: {
-      lead: "E‑commerce engineering, growth & operations in one team.",
-      accent: "Without the frightening hourly rates.",
+      lead: "Software, design and digital growth",
+      accent: "in one team.",
     },
     description:
-      "Custom ikas / Ticimax development, 1-second PageSpeed overhauls, mobile apps and AI automations; plus marketplace management, ad campaigns, product visuals and profitability reporting. Agency-grade quality on accessible subscription and credit models.",
-    primaryCta: "Get a free site audit & fix",
+      "We build websites, mobile apps, e‑commerce platforms and software that makes your day-to-day operations easier. Work with us on a monthly subscription or a credit model, whichever fits.",
+    primaryCta: "Get a free issue review",
     secondaryCta: "Explore solutions & pricing",
-    assurances: ["No lock-ins", "First minor fix is free", "Direct developer access"],
+    assurances: ["No lock-ins", "First issue review is free", "Direct developer access"],
   },
   performance: {
     eyebrow: "Illustrative scenario / Mobile performance",
@@ -55,8 +55,8 @@ export const home: HomeContent = {
     oldWay: {
       label: "The old way",
       items: [
-        "$200/hr platform developer fees",
-        "3-week waiting lists for minor CSS fixes",
+        "High hourly developer rates",
+        "Long waits for small fixes",
         "Clunky themes, slow responses",
         "An invoice for every conversation",
       ],
@@ -64,9 +64,9 @@ export const home: HomeContent = {
     newWay: {
       label: "Our way",
       items: [
-        "Instant task-credit system",
-        "24/7 direct developer access",
-        "1-second load times",
+        "A credit system for opening tasks when you need them",
+        "Direct contact with the developer",
+        "Development focused on speed and performance",
         "Transparent flat-rate or credit packages",
       ],
     },
@@ -141,7 +141,7 @@ export const home: HomeContent = {
     eyebrow: "Start with a win",
     title: { lead: "Let’s measure", accent: "your site speed." },
     description:
-      "Drop your URL. We analyze your site’s bottlenecks and fix your first minor UI or speed issue completely free to prove our speed.",
+      "Enter your URL and we’ll measure your site. Our team also reviews the results by hand and walks you through the root causes in a free 15-minute call.",
     inputLabel: "Your e-commerce or website URL",
     inputPlaceholder: "https://yourstore.com",
     submitLabel: "Get my free analysis",
@@ -190,10 +190,10 @@ export const home: HomeContent = {
       privacyNote: "Your email address is used to send you the report. ",
       subject: (host) => `Your site speed report for ${host}`,
       intro: "Your site’s mobile and desktop measurement results are below.",
-      cta: "Contact us for a free first fix",
+      cta: "Book a free 15-minute call",
       footer: "You received this email because you asked for your speed measurement result on our website.",
     },
-    resultCta: "Detailed report & free first fix",
+    resultCta: "Free issue review & call",
     retryLabel: "Try another URL",
     categories: {
       performance: "Performance",

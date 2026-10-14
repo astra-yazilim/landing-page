@@ -28,7 +28,7 @@
 .filterActive,
 .filterActive:hover {
   border-color: transparent;
-  color: var(--color-on-brand);
+  color: var(--color-white);
 }
 
 .pill {

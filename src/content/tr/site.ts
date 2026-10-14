@@ -113,9 +113,9 @@ export const layout: LayoutContent = {
 };
 
 export const forms: FormsContent = {
-  modalTitle: "Ücretsiz site analizi ve ilk düzeltme",
+  modalTitle: "Ücretsiz sorun tespiti",
   modalDescription:
-    "Bilgilerinizi bırakın; sitenizi inceleyip analiz sonucunu ve ücretsiz düzeltme önerimizi iletelim.",
+    "Bilgilerinizi bırakın; sitenizi inceleyelim, bulduklarımızı 15 dakikalık ücretsiz bir telefon veya görüntülü görüşmede anlatalım.",
   fields: {
     name: { label: "Ad Soyad", placeholder: "Adınız ve soyadınız" },
     email: { label: "E-posta", placeholder: "ornek@sirket.com" },

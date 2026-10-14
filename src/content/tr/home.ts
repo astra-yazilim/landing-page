@@ -2,16 +2,16 @@ import type { HomeContent } from "@/content/types";
 
 export const home: HomeContent = {
   hero: {
-    badge: "Platformlara ve klasik ajanslara saatlik 200$+ ödemeyi bırakın",
+    badge: "Web · Mobil · E‑ticaret · Yapay zeka",
     title: {
-      lead: "E‑ticarette yazılım, büyüme ve operasyon tek ekipte.",
-      accent: "Ürkütücü saatlik ücretler olmadan.",
+      lead: "Yazılım, tasarım ve dijital büyüme",
+      accent: "tek bir ekipte.",
     },
     description:
-      "Özel ikas / Ticimax geliştirmeleri, 1 saniyelik PageSpeed iyileştirmeleri, mobil uygulamalar ve yapay zeka otomasyonları; yanında pazaryeri yönetimi, reklam kampanyaları, ürün görselleri ve kârlılık raporları. Ajans kalitesi; erişilebilir abonelik ve kredi modelleriyle.",
-    primaryCta: "Ücretsiz analiz ve düzeltme al",
+      "Web siteleri, mobil uygulamalar, e‑ticaret altyapıları ve iş süreçlerinizi kolaylaştıran yazılımlar geliştiriyoruz. İhtiyacınıza göre aylık abonelik ya da kredi modeliyle çalışıyoruz.",
+    primaryCta: "Ücretsiz sorun tespiti al",
     secondaryCta: "Çözümleri ve fiyatları incele",
-    assurances: ["Taahhüt yok", "İlk küçük düzeltme ücretsiz", "Doğrudan geliştirici iletişimi"],
+    assurances: ["Taahhüt yok", "İlk sorun tespiti ücretsiz", "Doğrudan geliştirici iletişimi"],
   },
   performance: {
     eyebrow: "Temsili senaryo / Mobil performans",
@@ -55,8 +55,8 @@ export const home: HomeContent = {
     oldWay: {
       label: "Eski yöntem",
       items: [
-        "Saatlik 200$ platform geliştirici ücretleri",
-        "Küçük CSS düzeltmeleri için 3 haftalık bekleme listeleri",
+        "Yüksek saatlik geliştirici ücretleri",
+        "Küçük düzeltmeler için uzun bekleme süreleri",
         "Hantal temalar, yavaş yanıtlar",
         "Her görüşme için ayrı fatura",
       ],
@@ -64,9 +64,9 @@ export const home: HomeContent = {
     newWay: {
       label: "Bizim yöntem",
       items: [
-        "Anında görev açabileceğiniz kredi sistemi",
-        "7/24 doğrudan geliştirici erişimi",
-        "1 saniyelik açılış süreleri",
+        "İhtiyaç olduğunda görev açabileceğiniz kredi sistemi",
+        "Geliştiriciyle doğrudan iletişim",
+        "Hız ve performans odaklı geliştirme",
         "Şeffaf sabit fiyat veya kredi paketleri",
       ],
     },
@@ -145,7 +145,7 @@ export const home: HomeContent = {
     eyebrow: "Bir kazanımla başlayın",
     title: { lead: "Sitenizin hızını", accent: "şimdi ölçelim." },
     description:
-      "Adresinizi girin; darboğazları analiz edelim ve hızımızı kanıtlamak için ilk küçük arayüz veya hız sorununuzu tamamen ücretsiz düzeltelim.",
+      "Adresinizi girin; sitenizi ölçelim. Ekibimiz sonuçları elle de inceleyip sorunların kaynağını 15 dakikalık ücretsiz bir görüşmede sizinle paylaşsın.",
     inputLabel: "E-ticaret veya web sitenizin adresi",
     inputPlaceholder: "https://magazaniz.com",
     submitLabel: "Ücretsiz analiz al",
@@ -195,10 +195,10 @@ export const home: HomeContent = {
       privacyNote: "E-posta adresiniz raporu size iletmek için işlenir. ",
       subject: (host) => `${host} için site hızı raporunuz`,
       intro: "Sitenizin mobil ve masaüstü ölçüm sonuçları aşağıda.",
-      cta: "Ücretsiz ilk düzeltme için bize ulaşın",
+      cta: "15 dakikalık ücretsiz görüşme planlayın",
       footer: "Bu e-postayı, sitemizdeki hız ölçümünün sonucunu e-posta ile istediğiniz için aldınız.",
     },
-    resultCta: "Detaylı rapor ve ücretsiz ilk düzeltme",
+    resultCta: "Ücretsiz sorun tespiti ve görüşme",
     retryLabel: "Başka bir adres dene",
     categories: {
       performance: "Performans",

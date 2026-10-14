@@ -11,6 +11,7 @@
   --color-indigo: #6366f1;
   --color-warning: #fbbf24;
   --color-danger: #fca5a5;
+  --color-verified: #60a5fa;
   --color-heading: #f8fafc;
   --color-text: #cbd5e1;
   --color-muted: #94a3b8;
@@ -29,6 +30,7 @@
   --border: rgb(var(--rgb-fg) / 0.1);
   --border-strong: rgb(var(--rgb-fg) / 0.2);
   --track: rgb(var(--rgb-fg) / 0.08);
+  --tag-bg: rgb(var(--rgb-fg) / 0.08);
   --well: rgb(0 0 0 / 0.3);
   --overlay: rgb(3 6 10 / 0.72);
   --header-bg: rgb(7 10 15 / 0.72);
@@ -64,6 +66,7 @@
   --color-accent-alt: #4338ca;
   --color-warning: #b45309;
   --color-danger: #b91c1c;
+  --color-verified: #2563eb;
   --color-heading: #0b1220;
   --color-text: #334155;
   --color-muted: #536076;
@@ -79,6 +82,7 @@
   --border: rgb(var(--rgb-fg) / 0.11);
   --border-strong: rgb(var(--rgb-fg) / 0.24);
   --track: rgb(var(--rgb-fg) / 0.1);
+  --tag-bg: #eef1f5;
   --well: rgb(var(--rgb-fg) / 0.04);
   --overlay: rgb(15 23 42 / 0.45);
   --header-bg: rgb(246 248 251 / 0.82);

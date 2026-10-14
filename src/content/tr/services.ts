@@ -7,7 +7,7 @@ export const services: Record<ServiceId, ServiceText> = {
     title: "E-Ticaret Altyapısı ve Özel Geliştirme",
     shortTitle: "E-Ticaret Geliştirme",
     summary:
-      "ikas, Ticimax ve WooCommerce için derin özel kod. Özel arayüz, ödeme adımı optimizasyonu, CAPI/GTM kurulumları ve anında hız artışı.",
+      "ikas, Ticimax ve WooCommerce için derin özel kod. Özel arayüz, ödeme adımı optimizasyonu, CAPI/GTM kurulumları ve hız iyileştirmeleri.",
     description:
       "Hazır temanın bittiği yerde biz başlıyoruz. Mağazanızın altyapısına dokunmadan, platformun izin verdiği her noktada özel kod yazıyor; sepetten ödemeye kadar her adımı ölçüp iyileştiriyoruz.",
     tags: ["ikas", "Ticimax", "WooCommerce", "CAPI", "GTM", "Checkout"],
@@ -25,8 +25,8 @@ export const services: Record<ServiceId, ServiceText> = {
         text: "Meta CAPI, GA4 ve GTM kurulumlarını sunucu taraflı ve tutarlı çalışacak şekilde yapılandırıyoruz.",
       },
       {
-        title: "Anında hız artışı",
-        text: "Görsel, script ve üçüncü parti yükünü ayıklayıp mağazanızı 1 saniyelik açılış hedefine taşıyoruz.",
+        title: "Hız iyileştirmesi",
+        text: "Görsel, script ve üçüncü parti yükünü azaltarak mağazanızın açılış süresini ve Core Web Vitals değerlerini iyileştiriyoruz.",
       },
     ],
     deliverables: [
@@ -52,7 +52,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "web-tasarim-ve-hizli-uygulamalar",
     title: "Web Tasarım ve Yüksek Hızlı Uygulamalar",
     shortTitle: "Web Tasarım",
-    summary: "Next.js, modern CSS ve Headless CMS. Sıfır gecikme, 100/100 Lighthouse skorları.",
+    summary: "Next.js, modern CSS ve Headless CMS ile hız ve erişilebilirlik öncelikli siteler.",
     description:
       "Kurumsal siteler, ürün tanıtım sayfaları ve web uygulamalarını performansı tasarımın bir parçası sayarak inşa ediyoruz.",
     tags: ["Next.js", "Headless CMS", "Lighthouse"],
@@ -63,7 +63,7 @@ export const services: Record<ServiceId, ServiceText> = {
       },
       {
         title: "Performans öncelikli mimari",
-        text: "Sunucu taraflı render, akıllı önbellekleme ve optimize görsellerle anında açılan sayfalar.",
+        text: "Sunucu taraflı render, akıllı önbellekleme ve optimize görsellerle hızlı açılan sayfalar.",
       },
       {
         title: "Kolay içerik yönetimi",
@@ -88,7 +88,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "mobil-uygulama-gelistirme",
     title: "Çapraz Platform Mobil Uygulamalar",
     shortTitle: "Mobil Uygulama",
-    summary: "React Native ve Expo ile mağazanızla kusursuz senkron çalışan iOS ve Android uygulamaları.",
+    summary: "React Native ve Expo ile mağazanızın verisiyle senkron çalışan iOS ve Android uygulamaları.",
     description:
       "Tek kod tabanından iki platforma yayınlanan, mağazanızın ürün, stok ve sipariş verisiyle gerçek zamanlı çalışan uygulamalar geliştiriyoruz.",
     tags: ["React Native", "Expo", "iOS", "Android"],
@@ -123,10 +123,10 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "ozel-yazilim-ve-yapay-zeka-otomasyonlari",
     title: "Özel Yazılım ve Yapay Zeka Otomasyonları",
     shortTitle: "Yazılım ve Otomasyon",
-    summary: "İç paneller, CRM/ERP entegrasyonları ve manuel işi ortadan kaldıran otomatik iş akışları.",
+    summary: "İç paneller, CRM/ERP entegrasyonları, Excel ve RPA otomasyonları ile manuel işi azaltan iş akışları.",
     description:
       "Ekibinizin her gün tekrar ettiği işleri tespit edip yazılıma devrediyoruz. Sistemleriniz birbiriyle konuşur, siz büyümeye odaklanırsınız.",
-    tags: ["Otomasyon", "CRM/ERP", "Yapay Zeka", "Panel"],
+    tags: ["Otomasyon", "Yapay Zeka", "RPA", "Excel", "CRM/ERP", "Panel"],
     features: [
       {
         title: "İç paneller",
@@ -140,10 +140,15 @@ export const services: Record<ServiceId, ServiceText> = {
         title: "Yapay zeka destekli akışlar",
         text: "Müşteri mesajlarını sınıflandıran, içerik üreten ve rapor hazırlayan otomasyonlar.",
       },
+      {
+        title: "Veri ve Excel otomasyonu (RPA)",
+        text: "Excel ve Google Sheets raporlarını, dosya aktarımlarını ve web portallarına veri girişini otomatikleştiren; e-posta eklerinden ve PDF'lerden veri çeken yazılım robotları.",
+      },
     ],
     deliverables: [
       "İhtiyaç analizi ve süreç haritası",
       "Özel panel veya entegrasyon servisi",
+      "Excel makroları, betikler veya RPA robotları",
       "Otomasyon senaryoları ve izleme ekranı",
       "Dokümantasyon ve ekip eğitimi",
     ],
@@ -153,13 +158,18 @@ export const services: Record<ServiceId, ServiceText> = {
         answer:
           "Kuralları belli olan ve düzenli tekrar eden her iş uygundur: sipariş aktarımı, stok eşitleme, faturalama, raporlama ve müşteri mesajlarının yönlendirilmesi gibi.",
       },
+      {
+        question: "Excel ile yürüttüğümüz işleri de otomatikleştirebilir misiniz?",
+        answer:
+          "Evet. Elle kopyala-yapıştır yapılan tabloları, düzenli hazırlanan raporları ve web portallarına yapılan veri girişlerini; ihtiyaca göre Excel makroları (VBA), Python betikleri veya RPA robotlarıyla otomatikleştiriyoruz. Mümkün olduğunda ekibinizin alıştığı Excel düzenini koruyoruz.",
+      },
     ],
   },
   seo: {
     slug: "buyume-ve-teknik-seo",
     title: "Büyüme ve Teknik SEO",
     shortTitle: "Teknik SEO",
-    summary: "Schema işaretlemeleri, dönüşüm oranı optimizasyonu (CRO) ve arama sonuçlarında üstünlük.",
+    summary: "Schema işaretlemeleri, dönüşüm oranı optimizasyonu (CRO) ve arama görünürlüğü.",
     description:
       "Trafiği artırmak yetmez; gelen ziyaretçinin satın alması gerekir. Teknik SEO ile dönüşüm optimizasyonunu aynı masada ele alıyoruz.",
     tags: ["Schema", "CRO", "Core Web Vitals"],
@@ -195,7 +205,7 @@ export const services: Record<ServiceId, ServiceText> = {
     slug: "bulut-hosting-ve-7-24-bakim",
     title: "Bulut Hosting ve 7/24 Bakım",
     shortTitle: "Hosting ve Bakım",
-    summary: "Vercel ve Cloudflare kurulumları, kesintisiz bakım ve anında acil destek.",
+    summary: "Vercel ve Cloudflare kurulumları, düzenli bakım ve acil durum desteği.",
     description:
       "Siteniz yayındayken de yanınızdayız. Altyapıyı kuruyor, izliyor ve bir sorun çıktığında siz fark etmeden müdahale ediyoruz.",
     tags: ["Vercel", "Cloudflare", "İzleme"],
@@ -205,8 +215,8 @@ export const services: Record<ServiceId, ServiceText> = {
         text: "Vercel ve Cloudflare üzerinde küresel dağıtım, önbellekleme ve güvenlik katmanları.",
       },
       {
-        title: "Kesintisiz bakım",
-        text: "Güncellemeler ve yayınlar ziyaretçileriniz hiçbir şey fark etmeden yapılır.",
+        title: "Planlı bakım",
+        text: "Güncellemeleri ve yayınları, ziyaretçilerinizi en az etkileyecek şekilde planlayıp uyguluyoruz.",
       },
       {
         title: "Acil durum desteği",

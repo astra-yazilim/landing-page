@@ -113,9 +113,9 @@ export const layout: LayoutContent = {
 };
 
 export const forms: FormsContent = {
-  modalTitle: "Free site audit and first fix",
+  modalTitle: "Free issue review",
   modalDescription:
-    "Leave your details and we’ll review your site, then send the findings along with our free fix proposal.",
+    "Leave your details; we’ll review your site and walk you through our findings in a free 15-minute phone or video call.",
   fields: {
     name: { label: "Full name", placeholder: "Your full name" },
     email: { label: "Email", placeholder: "you@company.com" },

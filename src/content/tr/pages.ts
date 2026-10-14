@@ -118,7 +118,7 @@ export const pages: PagesContent = {
     meta: {
       title: "Ücretsiz Site Analizi",
       description:
-        "Sitenizin mobil hızını ve Core Web Vitals değerlerini ücretsiz ölçün. İlk küçük hız veya arayüz sorununuzu ücretsiz düzeltelim.",
+        "Sitenizin mobil ve masaüstü hızını, Core Web Vitals değerlerini ücretsiz ölçün; sorunların kaynağını 15 dakikalık ücretsiz bir görüşmede birlikte konuşalım.",
     },
     stepsTitle: "Analiz nasıl ilerliyor?",
     steps: [
@@ -129,8 +129,8 @@ export const pages: PagesContent = {
         icon: "gauge",
       },
       {
-        title: "İlk düzeltme bizden",
-        text: "Ekibimiz sitenizi elle de inceler ve ilk küçük sorunu ücretsiz düzeltir.",
+        title: "Ücretsiz sorun tespiti",
+        text: "Ekibimiz sitenizi elle de inceler; bulduklarımızı ve önerilerimizi 15 dakikalık telefon veya görüntülü görüşmede anlatırız.",
         icon: "sparkles",
       },
     ],

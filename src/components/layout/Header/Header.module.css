@@ -103,7 +103,7 @@
 }
 
 .developerLink svg {
-  color: var(--color-accent);
+  color: var(--color-verified);
 }
 
 .developerLink:hover,
@@ -123,7 +123,7 @@
 }
 
 .drawerDeveloper svg {
-  color: var(--color-accent);
+  color: var(--color-verified);
 }
 
 .menuButton {

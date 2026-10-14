@@ -124,9 +124,9 @@ export const faq: { general: FaqItem[]; pricing: FaqItem[] } = {
     creditSystem,
     modelDifference,
     {
-      question: "Ücretsiz analiz ve ilk düzeltme gerçekten ücretsiz mi?",
+      question: "Ücretsiz sorun tespiti gerçekten ücretsiz mi?",
       answer:
-        "Evet. Sitenizi analiz edip tespit ettiğimiz ilk küçük arayüz veya hız sorununu ücretsiz düzeltiyoruz. Devam etme zorunluluğunuz yok.",
+        "Evet. Sitenizi inceleyip sorunların kaynağını ve önerilerimizi 15 dakikalık bir görüşmede ücretsiz olarak paylaşıyoruz. Sonrasında bizimle devam etme zorunluluğunuz yok.",
     },
     {
       question: "Hangi altyapılarla çalışıyorsunuz?",
