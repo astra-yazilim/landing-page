@@ -12,6 +12,30 @@ import type {
   DeveloperWorkModelId,
 } from "@/config/developers";
 import type { DeveloperValidationKey } from "@/lib/developers";
+import type {
+  EmployeeCount,
+  InvestmentBudget,
+  InvestmentHorizon,
+  InvestmentStage,
+  InvestorType,
+  Involvement,
+  PreviousInvestments,
+} from "@/config/investors";
+import type { Sector } from "@/config/sectors";
+import type {
+  CollaborationModel,
+  DeliveryTimeline,
+  ExistingAsset,
+  ExpectedUsers,
+  FundingStatus,
+  Integration,
+  Platform,
+  ProductType,
+  ProjectBudget,
+  SubmissionStage,
+} from "@/config/projectApplications";
+import type { ProjectValidationKey } from "@/lib/projectApplications";
+import type { InvestorValidationKey } from "@/lib/investors";
 
 export type TemplateFeature = "shop" | "blog" | "portfolio" | "onePage";
 
@@ -146,6 +170,9 @@ export type FormsContent = {
   successText: string;
   errorText: string;
   validation: Record<"name" | "email" | "message" | "consent", string>;
+  selectPlaceholder: string;
+  sectors: Record<Sector, string>;
+  agreementDialog: { readLink: string; versionLabel: string; draftNotice: string };
 };
 
 export type HomeContent = {
@@ -228,6 +255,11 @@ export type HomeContent = {
       | "speed-index",
       string
     >;
+  };
+  ecosystem: {
+    eyebrow: string;
+    title: Title;
+    cards: Record<"projectApplication" | "developers" | "investors", { title: string; text: string; cta: string; icon: IconName }>;
   };
   faq: { eyebrow: string; title: Title };
   closingCta: { title: Title; description: string; primaryCta: string; secondaryCta: string };
@@ -318,6 +350,118 @@ export type DeveloperFormContent = {
   };
 };
 
+type InvestorFieldText = { label: string; placeholder?: string; hint?: string };
+
+export type InvestorFormContent = {
+  note: string;
+  groups: Record<"personal" | "company" | "profile" | "consent", string>;
+  fields: Record<
+    | "fullName"
+    | "corporateEmail"
+    | "phone"
+    | "city"
+    | "title"
+    | "profession"
+    | "linkedinUrl"
+    | "companyName"
+    | "companyWebsite"
+    | "sector"
+    | "employeeCount"
+    | "investorType"
+    | "budgetRange"
+    | "horizon"
+    | "previousInvestments"
+    | "involvement"
+    | "referralSource"
+    | "preferredStages"
+    | "interestAreas"
+    | "hasInvestorLicense"
+    | "note"
+    | "signatureName",
+    InvestorFieldText
+  >;
+  options: {
+    employeeCount: Record<EmployeeCount, string>;
+    investorType: Record<InvestorType, string>;
+    budgetRange: Record<InvestmentBudget, string>;
+    horizon: Record<InvestmentHorizon, string>;
+    preferredStages: Record<InvestmentStage, string>;
+    previousInvestments: Record<PreviousInvestments, string>;
+    involvement: Record<Involvement, string>;
+  };
+  kvkkConsent: ConsentText;
+  agreement: { title: string; acceptLabel: string; clauses: string[] };
+  submitLabel: string;
+  submittingLabel: string;
+  successTitle: string;
+  successText: string;
+  errorText: string;
+  validation: Record<Exclude<InvestorValidationKey, "minLength">, string> & { minLength: (min: number) => string };
+};
+
+export type ProjectFormContent = {
+  note: string;
+  groups: Record<"contact" | "summary" | "status" | "scope" | "budget" | "collaboration" | "consent", string>;
+  fields: Record<
+    | "fullName"
+    | "email"
+    | "phone"
+    | "role"
+    | "companyName"
+    | "linkedinUrl"
+    | "projectName"
+    | "productType"
+    | "sector"
+    | "summary"
+    | "problem"
+    | "targetAudience"
+    | "stage"
+    | "completionPercent"
+    | "existingAssets"
+    | "techStack"
+    | "repositoryUrl"
+    | "stallReason"
+    | "platforms"
+    | "coreFeatures"
+    | "integrations"
+    | "expectedUsers"
+    | "technicalRequirements"
+    | "budgetRange"
+    | "timeline"
+    | "fundingStatus"
+    | "collaborationModel"
+    | "referralCompany"
+    | "referralContact"
+    | "referralEmail"
+    | "referralRelationship"
+    | "ndaRequested"
+    | "signatureName",
+    InvestorFieldText
+  >;
+  options: {
+    productType: Record<ProductType, string>;
+    stage: Record<SubmissionStage, string>;
+    existingAssets: Record<ExistingAsset, string>;
+    platforms: Record<Platform, string>;
+    integrations: Record<Integration, string>;
+    expectedUsers: Record<ExpectedUsers, string>;
+    budgetRange: Record<ProjectBudget, string>;
+    timeline: Record<DeliveryTimeline, string>;
+    fundingStatus: Record<FundingStatus, string>;
+  };
+  collaborationModels: Record<CollaborationModel, { title: string; text: string }>;
+  referralNotice: string;
+  kvkkConsent: ConsentText;
+  agreement: { title: string; acceptLabel: string; clauses: string[] };
+  submitLabel: string;
+  submittingLabel: string;
+  successTitle: string;
+  successText: string;
+  codeLabel: string;
+  errorText: string;
+  validation: Record<Exclude<ProjectValidationKey, "minLength">, string> & { minLength: (min: number) => string };
+};
+
 export type PagesContent = {
   services: { meta: PageMeta; eyebrow: string; title: Title; description: string };
   serviceDetail: {
@@ -390,6 +534,24 @@ export type PagesContent = {
     form: DeveloperFormContent;
   };
   developerAgreement: { meta: PageMeta; updatedAt: string; updatedLabel: string; sections: LegalSection[] };
+  investors: {
+    meta: PageMeta;
+    eyebrow: string;
+    title: string;
+    description: string;
+    faqTitle: string;
+    faq: FaqItem[];
+    form: InvestorFormContent;
+  };
+  projectApplication: {
+    meta: PageMeta;
+    eyebrow: string;
+    title: string;
+    description: string;
+    faqTitle: string;
+    faq: FaqItem[];
+    form: ProjectFormContent;
+  };
   audit: { meta: PageMeta; stepsTitle: string; steps: IconStep[] };
   about: {
     meta: PageMeta;

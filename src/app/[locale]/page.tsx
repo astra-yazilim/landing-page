@@ -10,8 +10,10 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps/ProcessSteps";
 import { ServicesGrid } from "@/components/sections/ServicesGrid/ServicesGrid";
 import { JsonLd } from "@/components/seo/JsonLd/JsonLd";
 import { Button } from "@/components/ui/Button/Button";
+import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import { SpotlightCard } from "@/components/ui/SpotlightCard/SpotlightCard";
 import { getPath } from "@/config/routes";
 import { getContent } from "@/content";
 import { getReferences } from "@/lib/catalog";
@@ -71,7 +73,7 @@ export default async function HomePage({ params }: LocaleParams) {
             />
             <div className={styles.aside}>
               <p>{home.projects.description}</p>
-              <Button href={getPath(locale, "projects")} variant="ghost" icon="arrowRight" className={styles.link}>
+              <Button href={getPath(locale, "projects")} variant="glass" icon="arrowRight" className={styles.pulse}>
                 {home.projects.cta}
               </Button>
             </div>
@@ -117,10 +119,42 @@ export default async function HomePage({ params }: LocaleParams) {
         </div>
       </section>
 
+      <section className={styles.section} aria-labelledby="ecosystem-title">
+        <div className="container">
+          <Reveal className={styles.head}>
+            <SectionHeading
+              id="ecosystem-title"
+              index="08"
+              eyebrow={home.ecosystem.eyebrow}
+              title={home.ecosystem.title}
+            />
+          </Reveal>
+          <ul className={styles.ecosystem}>
+            {(["projectApplication", "developers", "investors"] as const).map((routeId, index) => {
+              const card = home.ecosystem.cards[routeId];
+              return (
+                <li key={routeId}>
+                  <Reveal delay={index * 0.08} className={styles.reveal}>
+                    <SpotlightCard accent={index % 2 ? "indigo" : "emerald"} className={styles.ecosystemCard}>
+                      <Icon name={card.icon} size={26} className={styles.ecosystemIcon} />
+                      <h3 className={styles.ecosystemTitle}>{card.title}</h3>
+                      <p className={styles.ecosystemText}>{card.text}</p>
+                      <Button href={getPath(locale, routeId)} variant="glass" icon="arrowRight">
+                        {card.cta}
+                      </Button>
+                    </SpotlightCard>
+                  </Reveal>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       <section className={styles.section} aria-labelledby="faq-title">
         <div className={cx("container", styles.faqLayout)}>
           <Reveal>
-            <SectionHeading id="faq-title" index="08" eyebrow={home.faq.eyebrow} title={home.faq.title} />
+            <SectionHeading id="faq-title" index="09" eyebrow={home.faq.eyebrow} title={home.faq.title} />
           </Reveal>
           <Faq items={faq.general} name="home-faq" />
         </div>

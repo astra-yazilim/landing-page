@@ -1,0 +1,115 @@
+.models {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.modelsLegend {
+  margin-bottom: 12px;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.modelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 12px;
+}
+
+.model {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgb(var(--rgb-fg) / 0.03);
+  cursor: pointer;
+  transition:
+    border-color var(--duration) var(--ease-out),
+    background-color var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out);
+}
+
+.model:hover {
+  border-color: var(--border-strong);
+}
+
+.modelActive,
+.modelActive:hover {
+  border-color: var(--color-brand);
+  background: rgb(var(--rgb-emerald) / 0.08);
+  box-shadow: 0 0 0 1px var(--color-brand);
+}
+
+.model:has(.modelInput:focus-visible) {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+.modelInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modelTitle {
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.modelText {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.models[aria-invalid="true"] .model {
+  border-color: rgb(var(--rgb-danger) / 0.5);
+}
+
+.referral {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.referralNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgb(var(--rgb-gold) / 0.45);
+  border-radius: var(--radius-sm);
+  background: rgb(var(--rgb-gold) / 0.1);
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.referralNotice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--color-gold);
+}
+
+.code {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--tag-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+}
+
+.code strong {
+  color: var(--color-heading);
+}

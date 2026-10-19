@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
 import { LeadModalProvider } from "@/components/lead/LeadModal/LeadModal";
 import { JsonLd } from "@/components/seo/JsonLd/JsonLd";
+import { ShootingStars } from "@/components/ui/ShootingStars/ShootingStars";
 import { ThemeSync } from "@/components/theme/ThemeSync/ThemeSync";
 import { seoConfig } from "@/config/seo";
 import { defaultTheme, siteConfig, systemLightQuery, themeStorageKey } from "@/config/site";
@@ -106,18 +107,20 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       <body>
         <LocaleProvider locale={locale}>
           <ThemeSync />
-          <a href="#main" className={styles.skipLink}>
-            {layout.common.skipToContent}
-          </a>
-          <LeadModalProvider>
-            <Header />
-            <main id="main" className={styles.main}>
-              {children}
-            </main>
-            <Footer locale={locale} />
-            <Chatbot />
-          </LeadModalProvider>
-          <CookieConsent />
+          <ShootingStars>
+            <a href="#main" className={styles.skipLink}>
+              {layout.common.skipToContent}
+            </a>
+            <LeadModalProvider>
+              <Header />
+              <main id="main" className={styles.main}>
+                {children}
+              </main>
+              <Footer locale={locale} />
+              <Chatbot />
+            </LeadModalProvider>
+            <CookieConsent />
+          </ShootingStars>
         </LocaleProvider>
         <JsonLd data={[organizationSchema(locale), websiteSchema(locale)]} />
       </body>

@@ -214,6 +214,15 @@ export const projectCatalog = [
     own: false,
   },
   {
+    id: "aslanHarita",
+    image: "/projects/aslan-harita-ve-muhendislik.webp",
+    url: null,
+    device: "laptop",
+    platform: "website",
+    featured: false,
+    own: false,
+  },
+  {
     id: "emfar",
     image: "/projects/emfar-yangin-sondurme.webp",
     url: null,

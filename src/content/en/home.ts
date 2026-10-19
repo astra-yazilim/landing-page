@@ -210,6 +210,30 @@ export const home: HomeContent = {
       "speed-index": "Speed Index",
     },
   },
+  ecosystem: {
+    eyebrow: "Astra ecosystem",
+    title: { lead: "Be part of what we build,", accent: "from outside the team too." },
+    cards: {
+      projectApplication: {
+        title: "Have a project?",
+        text: "Tell us about your idea, an unfinished project or work you’d like to refer; our technical team will review it and get back to you.",
+        cta: "Tell us about your project",
+        icon: "rocket",
+      },
+      developers: {
+        title: "For developers",
+        text: "We assign work that matches your skills; work as an Astra Verified Developer per task, weekly or monthly.",
+        cta: "Join the developer network",
+        icon: "badgeCheck",
+      },
+      investors: {
+        title: "For angel investors",
+        text: "Invest in products and projects built in the Astra ecosystem; once approved, review the project summaries shared with you.",
+        cta: "Apply as an investor",
+        icon: "trending",
+      },
+    },
+  },
   faq: {
     eyebrow: "Good to know",
     title: { lead: "Frequently asked", accent: "questions." },

@@ -69,7 +69,6 @@
 }
 
 .field textarea {
-  min-height: 112px;
   resize: vertical;
 }
 

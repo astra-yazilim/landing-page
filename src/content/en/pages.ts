@@ -1,4 +1,7 @@
 import type { PagesContent } from "@/content/types";
+import { referralCommissionRate } from "@/config/projectApplications";
+
+const commission = `${referralCommissionRate * 100}%`;
 
 export const pages: PagesContent = {
   services: {
@@ -466,6 +469,376 @@ export const pages: PagesContent = {
       },
     ],
   },
+  investors: {
+    meta: {
+      title: "Angel Investor Application",
+      description: "Apply as an angel investor to invest in products and projects built in the Astra ecosystem.",
+    },
+    eyebrow: "Astra ecosystem",
+    title: "Angel Investor Application",
+    description:
+      "Apply to invest in products and projects built in the Astra ecosystem. Once approved, you get an account where you can view only the project summaries shared with you.",
+    faqTitle: "Good to know",
+    faq: [
+      {
+        question: "What happens after I apply?",
+        answer:
+          "Our team reviews your application and gets back to you by email. If approved, you get an account where you can view only the project summaries shared with you.",
+      },
+      {
+        question: "Why do you ask for a corporate email?",
+        answer:
+          "Project summaries contain confidential information, so we need to verify the applicant’s identity and affiliation. Verification is done through your corporate email address.",
+      },
+      {
+        question: "Does applying oblige me to invest?",
+        answer:
+          "No. Applying and being approved only gives you access to project summaries. Any investment is carried out under a separate investment agreement signed by the parties.",
+      },
+      {
+        question: "How confidential is the project information?",
+        answer:
+          "All project summaries, financial data and documents you view are confidential and may not be shared with third parties. This obligation lasts for 3 years after your access ends.",
+      },
+      {
+        question: "Is a BKY license required?",
+        answer: "No. If you hold a Crowdfunding Investor (BKY) license, just tick the box in the form.",
+      },
+    ],
+    form: {
+      note: "Required fields are marked with *.",
+      groups: {
+        personal: "Personal details",
+        company: "Company details",
+        profile: "Investor profile",
+        consent: "Agreement and consents",
+      },
+      fields: {
+        fullName: { label: "Full name *", placeholder: "Your full name" },
+        corporateEmail: {
+          label: "Corporate email *",
+          placeholder: "name.surname@yourcompany.com",
+          hint: "Verification is done with your corporate email address.",
+        },
+        phone: { label: "Phone *", placeholder: "05xx xxx xx xx" },
+        city: { label: "City", placeholder: "Istanbul" },
+        title: { label: "Title *", placeholder: "e.g. General Manager, CFO" },
+        profession: { label: "Profession *", placeholder: "e.g. Finance, Engineer, Lawyer" },
+        linkedinUrl: { label: "LinkedIn profile *", placeholder: "linkedin.com/in/username" },
+        companyName: { label: "Company you work for / are affiliated with *" },
+        companyWebsite: { label: "Company website", placeholder: "company.com" },
+        sector: { label: "Sector *" },
+        employeeCount: { label: "Number of employees *" },
+        investorType: { label: "Investor type *" },
+        budgetRange: { label: "Investment budget range *" },
+        horizon: { label: "Investment horizon *" },
+        previousInvestments: { label: "Previous investment experience *" },
+        involvement: { label: "Involvement *" },
+        referralSource: { label: "How did you hear about us?", placeholder: "e.g. LinkedIn, referral, event" },
+        preferredStages: { label: "Stages you’re interested in *" },
+        interestAreas: { label: "Sectors you’re interested in *" },
+        hasInvestorLicense: { label: "I hold a Crowdfunding Investor (BKY) license" },
+        note: { label: "Anything you’d like to add", placeholder: "Investment thesis, areas of particular interest..." },
+        signatureName: {
+          label: "Digital signature *",
+          placeholder: "Type your full name",
+          hint: "Typing your full name means you sign the agreement electronically.",
+        },
+      },
+      options: {
+        employeeCount: {
+          "1_10": "1-10",
+          "11_50": "11-50",
+          "51_200": "51-200",
+          "201_1000": "201-1,000",
+          "1000_plus": "1,000+",
+        },
+        investorType: {
+          individual: "Individual angel investor",
+          corporate: "Corporate (on behalf of a company)",
+          angel_network: "Angel network member",
+          family_office: "Family office",
+          fund: "Venture capital fund",
+        },
+        budgetRange: {
+          "250k_1m": "₺250,000 – ₺1,000,000",
+          "1m_5m": "₺1,000,000 – ₺5,000,000",
+          "5m_20m": "₺5,000,000 – ₺20,000,000",
+          "20m_plus": "₺20,000,000 +",
+        },
+        horizon: { under_1y: "Under 1 year", "1_3y": "1-3 years", "3_5y": "3-5 years", "5y_plus": "5+ years" },
+        preferredStages: { idea: "Idea", mvp: "MVP / Prototype", early_revenue: "Early revenue", growth: "Growth" },
+        previousInvestments: {
+          none: "None yet",
+          "1_3": "1-3 investments",
+          "4_10": "4-10 investments",
+          "10_plus": "10+ investments",
+        },
+        involvement: {
+          passive: "Passive (funding only)",
+          mentor: "Mentoring / advisory",
+          active: "Active (board / operations)",
+        },
+      },
+      kvkkConsent: {
+        before: "I have read the ",
+        linkLabel: "privacy notice (KVKK)",
+        after: " and consent to the processing of my personal data.",
+      },
+      agreement: {
+        title: "Investor Confidentiality and Framework Agreement",
+        acceptLabel: "I have read and accept the Investor Confidentiality and Framework Agreement.",
+        clauses: [
+          "All project summaries, financial data and documents shown on the platform are confidential; they may not be shared with third parties or copied.",
+          "The confidentiality obligation applies to every project viewed, whether or not an investment is made, and lasts for 3 years after access ends.",
+          "Platform access is personal; login details may not be transferred to anyone else.",
+          "Information in opportunities is not investment advice; the investment decision and its responsibility rest with the investor.",
+          "The investment process is carried out under a separate investment agreement signed by the parties.",
+          "In case of a breach of this agreement, Astra reserves the right to end access immediately and claim any resulting damages.",
+        ],
+      },
+      submitLabel: "Submit application",
+      submittingLabel: "Submitting...",
+      successTitle: "Your application is in",
+      successText: "Our team will review your application and get back to you by email.",
+      errorText: "Your application couldn’t be sent. Please try again.",
+      validation: {
+        required: "This field is required.",
+        email: "Enter a valid email address.",
+        minLength: (min) => `Must be at least ${min} characters.`,
+        minSelection: "Select at least one option.",
+        corporateEmail: "Please use your corporate email address (gmail, hotmail etc. are not accepted).",
+        phone: "Enter a valid phone number (05xx xxx xx xx).",
+        signature: "Type your full name in the signature field exactly as in your application.",
+        kvkk: "Privacy consent is required.",
+        agreement: "You need to accept the agreement to continue.",
+      },
+    },
+  },
+  projectApplication: {
+    meta: {
+      title: "I Have a Project",
+      description:
+        "Tell us about your idea, an unfinished project or work you’d like to refer; our technical team will review it and get back to you.",
+    },
+    eyebrow: "Project application",
+    title: "I Have a Project",
+    description:
+      "Tell us about your idea, an unfinished project or work you’d like to refer. Our technical team will review it through a manager’s and an architect’s eyes and get back to you.",
+    faqTitle: "Good to know",
+    faq: [
+      {
+        question: "Who reviews my application?",
+        answer:
+          "Our technical team reviews your project through a manager’s and an architect’s eyes, then gets back to you by email.",
+      },
+      {
+        question: "Does applying mean you take on the project?",
+        answer:
+          "No. Applying creates no obligation for Astra to take on the project; after the review, you receive a written proposal.",
+      },
+      {
+        question: "Can I hand over an unfinished project?",
+        answer:
+          "Yes. We review the existing code and documents and complete the project from where it stopped. You need to confirm that the source code and documents belong to you and that you’re authorized to hand them over.",
+      },
+      {
+        question: "How does the referral commission work?",
+        answer: `You refer the project to us; if it turns into a signed contract, you earn a ${commission} commission on the project fee. You don’t need to be involved in the process.`,
+      },
+      {
+        question: "How does the partnership model work?",
+        answer:
+          "We cover part of the development cost in exchange for revenue share or equity. The terms are set in a separate agreement.",
+      },
+      {
+        question: "How is my idea kept confidential?",
+        answer:
+          "The project information you share is used only for the review and kept confidential. If you ask in the form, we also sign a mutual non-disclosure agreement (NDA).",
+      },
+    ],
+    form: {
+      note: "Required fields are marked with *.",
+      groups: {
+        contact: "Contact details",
+        summary: "Project summary",
+        status: "Current status",
+        scope: "Scope and technical needs",
+        budget: "Budget and timeline",
+        collaboration: "Collaboration model",
+        consent: "Agreement and consents",
+      },
+      fields: {
+        fullName: { label: "Full name *", placeholder: "Your full name" },
+        email: { label: "Email *", placeholder: "you@mail.com" },
+        phone: { label: "Phone *", placeholder: "05xx xxx xx xx" },
+        role: { label: "Your role in the project *", placeholder: "e.g. Founder, Product Owner, CTO" },
+        companyName: { label: "Company / startup name", placeholder: "Company name" },
+        linkedinUrl: { label: "LinkedIn profile", placeholder: "linkedin.com/in/username" },
+        projectName: { label: "Project name *", placeholder: "e.g. Cooperative marketplace" },
+        productType: { label: "Product type *" },
+        sector: { label: "Sector *" },
+        summary: { label: "Briefly describe the project *", placeholder: "Describe what the product does in 2-3 sentences" },
+        problem: { label: "What problem does it solve? *", placeholder: "The problem users face today" },
+        targetAudience: {
+          label: "Who are the target users? *",
+          placeholder: "e.g. Logistics companies in Türkiye with 50-500 employees",
+        },
+        stage: { label: "Current stage of the project *" },
+        completionPercent: {
+          label: "Estimated completion (%)",
+          hint: "Fill in if development is ongoing or has stalled.",
+        },
+        existingAssets: { label: "What do you already have?" },
+        techStack: { label: "Technologies used", placeholder: "e.g. Laravel, Vue, MySQL, AWS" },
+        repositoryUrl: { label: "Code repository (if any)", placeholder: "https://github.com/..." },
+        stallReason: {
+          label: "Why did the project stall / why is a team change needed?",
+          placeholder: "e.g. Agency contract ended, low code quality, team dispersed",
+        },
+        platforms: { label: "Which platforms will it run on? *" },
+        coreFeatures: { label: "Must-have features (MVP) *", placeholder: "Write one feature per line" },
+        integrations: { label: "Required integrations" },
+        expectedUsers: { label: "Expected user volume *" },
+        technicalRequirements: {
+          label: "Security, privacy, performance or infrastructure expectations",
+          placeholder: "e.g. 2FA, role-based access, data kept in Türkiye",
+        },
+        budgetRange: { label: "Budget range *" },
+        timeline: { label: "Target timeline *" },
+        fundingStatus: { label: "Funding status *" },
+        collaborationModel: { label: "How would you like to work? *" },
+        referralCompany: { label: "Company you’re referring *" },
+        referralContact: { label: "Company contact *" },
+        referralEmail: { label: "Contact email *" },
+        referralRelationship: { label: "Your relationship with the company", placeholder: "e.g. I’m their consultant, former employee" },
+        ndaRequested: { label: "I’d like to sign a mutual non-disclosure agreement (NDA)" },
+        signatureName: {
+          label: "Digital signature *",
+          placeholder: "Type your full name",
+          hint: "Typing your full name means you sign the agreement electronically.",
+        },
+      },
+      options: {
+        productType: {
+          web: "Web application",
+          mobile: "Mobile app",
+          ecommerce: "E-commerce",
+          saas: "SaaS product",
+          internal_tool: "Internal software",
+          ai: "AI solution",
+          other: "Other",
+        },
+        stage: {
+          idea: "Idea stage",
+          designed: "Design / analysis ready",
+          in_development: "In development",
+          stalled: "Stalled",
+          live: "Live, needs further development",
+        },
+        existingAssets: {
+          requirements: "Requirements / analysis document",
+          design: "UI designs (Figma etc.)",
+          source_code: "Source code",
+          live_environment: "Live environment",
+          test_environment: "Test environment",
+          documentation: "Technical documentation",
+        },
+        platforms: { web: "Web", ios: "iOS", android: "Android", admin_panel: "Admin panel", desktop: "Desktop" },
+        integrations: {
+          payment: "Payments (iyzico, PayTR…)",
+          erp: "ERP / accounting (Logo, Mikro…)",
+          marketplace: "Marketplaces",
+          cargo: "Shipping",
+          sms_email: "SMS / email",
+          maps: "Maps / location",
+          ai: "AI services",
+          sso: "Corporate sign-in (SSO)",
+        },
+        expectedUsers: {
+          under_1k: "Under 1,000 users per month",
+          "1k_10k": "1,000 – 10,000 per month",
+          "10k_100k": "10,000 – 100,000 per month",
+          "100k_plus": "100,000+ per month",
+        },
+        budgetRange: {
+          under_100k: "Under ₺100,000",
+          "100k_250k": "₺100,000 – ₺250,000",
+          "250k_500k": "₺250,000 – ₺500,000",
+          "500k_1m": "₺500,000 – ₺1,000,000",
+          "1m_plus": "₺1,000,000 +",
+          undecided: "Not decided yet",
+        },
+        timeline: {
+          asap: "As soon as possible",
+          "1_3_months": "1-3 months",
+          "3_6_months": "3-6 months",
+          "6_plus_months": "6+ months",
+          flexible: "Flexible",
+        },
+        fundingStatus: {
+          self_funded: "Self-funded",
+          seeking: "Seeking investment",
+          funded: "Funded",
+          grant: "Grant / support (KOSGEB, TÜBİTAK…)",
+        },
+      },
+      collaborationModels: {
+        continue_existing: {
+          title: "Take over my unfinished project",
+          text: "We review the existing code and documents and complete the project from where it stopped.",
+        },
+        build_from_scratch: {
+          title: "Build it from scratch",
+          text: "We run analysis, design and development end to end.",
+        },
+        referral: {
+          title: "I’m referring a project (commission)",
+          text: "You refer the project to us and earn a commission on the project fee without being involved.",
+        },
+        partnership: {
+          title: "Partnership / revenue share",
+          text: "We cover part of the development cost in exchange for revenue share or equity.",
+        },
+      },
+      referralNotice: `If the project turns into a signed contract, you earn a ${commission} commission on the project fee.`,
+      kvkkConsent: {
+        before: "I have read the ",
+        linkLabel: "privacy notice (KVKK)",
+        after: " and consent to the processing of my personal data.",
+      },
+      agreement: {
+        title: "Project Application and Collaboration Framework Agreement",
+        acceptLabel: "I have read and accept the Project Application and Collaboration Framework Agreement.",
+        clauses: [
+          "The project information you share is used only for the review and kept confidential.",
+          "Applying creates no obligation for Astra to take on the project; a written proposal is provided after the review.",
+          "For unfinished projects, you confirm that the source code and documents belong to you and that you’re authorized to hand them over.",
+          `In the referral model, if the project you refer turns into a signed contract, a commission of ${commission} of the project fee is paid; you don’t need to be involved in the process.`,
+          "In the partnership / revenue share model, the terms are set in a separate agreement.",
+          "On request, a mutual non-disclosure agreement (NDA) is signed separately.",
+        ],
+      },
+      submitLabel: "Submit application",
+      submittingLabel: "Submitting...",
+      successTitle: "Your application is in",
+      successText: "Our team will review your application and get back to you by email.",
+      codeLabel: "Your application number",
+      errorText: "Your application couldn’t be sent. Please try again.",
+      validation: {
+        required: "This field is required.",
+        email: "Enter a valid email address.",
+        minLength: (min) => `Must be at least ${min} characters.`,
+        minSelection: "Select at least one option.",
+        phone: "Enter a valid phone number (05xx xxx xx xx).",
+        percent: "Enter a number between 0 and 100.",
+        referral: "Enter the company and contact details you’re referring.",
+        signature: "Type your full name in the signature field exactly as in your application.",
+        kvkk: "Privacy consent is required.",
+        agreement: "You need to accept the agreement to continue.",
+      },
+    },
+  },
   privacy: {
     meta: {
       title: "Privacy Policy",
@@ -497,6 +870,13 @@ export const pages: PagesContent = {
         paragraphs: [
           "For Astra Developer Network applications we process your name, contact details, title, skills, LinkedIn and GitHub profiles, CV and work preferences to review your application, offer you suitable work if approved and manage our contractual relationship. The legal basis is the formation and performance of a contract under Article 5(2)(c) of Law No. 6698.",
           "If your application is rejected, we delete your data within one year at the latest; if approved, we keep it for the duration of our working relationship and any legal retention periods. Applications and CVs are delivered through our email infrastructure provider.",
+        ],
+      },
+      {
+        heading: "Investor applications",
+        paragraphs: [
+          "For angel investor applications we process your name, corporate email, phone, title, profession, LinkedIn profile, company details and investment preferences to review your application, share suitable project summaries with you if approved and manage our contractual relationship.",
+          "If your application is rejected, we delete your data within one year at the latest; if approved, we keep it for the duration of our relationship and any legal retention periods.",
         ],
       },
       {

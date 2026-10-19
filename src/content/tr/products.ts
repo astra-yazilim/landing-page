@@ -159,6 +159,11 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Ulaşım",
     summary: "Taksi ve havalimanı transfer hizmeti için tanıtım sitesi.",
   },
+  aslanHarita: {
+    title: "Aslan Harita ve Mühendislik",
+    category: "Harita ve mühendislik",
+    summary: "Harita, mimarlık ve mühendislik firması için hizmet tanıtımlı kurumsal site.",
+  },
   emfar: {
     title: "Emfar Yangın Söndürme",
     category: "Güvenlik",

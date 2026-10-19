@@ -215,6 +215,30 @@ export const home: HomeContent = {
       "speed-index": "Hız indeksi",
     },
   },
+  ecosystem: {
+    eyebrow: "Astra ekosistemi",
+    title: { lead: "Ekibimizin dışından da", accent: "bu yapının parçası olun." },
+    cards: {
+      projectApplication: {
+        title: "Bir projeniz mi var?",
+        text: "Fikrinizi, yarım kalan projenizi ya da yönlendirmek istediğiniz bir işi anlatın; teknik ekibimiz değerlendirip size dönüş yapsın.",
+        cta: "Projenizi anlatın",
+        icon: "rocket",
+      },
+      developers: {
+        title: "Geliştiriciler için",
+        text: "Yetkinliğinize uygun işleri size atayalım; Astra Verified Developer olarak iş bitirme, haftalık ya da aylık modelle çalışın.",
+        cta: "Geliştirici ağına başvur",
+        icon: "badgeCheck",
+      },
+      investors: {
+        title: "Melek yatırımcılar için",
+        text: "Astra ekosisteminde geliştirilen ürün ve projelere yatırım yapın; onay sonrası size açılan proje özetlerini inceleyin.",
+        cta: "Yatırımcı başvurusu yap",
+        icon: "trending",
+      },
+    },
+  },
   faq: {
     eyebrow: "Merak edilenler",
     title: { lead: "Sık sorulan", accent: "sorular." },

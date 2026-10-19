@@ -1,0 +1,67 @@
+.scene {
+  isolation: isolate;
+}
+
+.sky {
+  --star-color: #e3c28c;
+  --star-glow: rgb(var(--rgb-gold) / 0.7);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+:global([data-theme="light"]) .sky {
+  --star-color: #b7925d;
+  --star-glow: rgb(var(--rgb-gold) / 0.45);
+}
+
+.star {
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  width: var(--length);
+  height: 1.5px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, transparent, var(--star-color));
+  opacity: 0;
+  transform: rotate(145deg) translateX(0);
+  transform-origin: right center;
+  animation: shoot 1.3s ease-out var(--delay) 1 both;
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--star-color);
+  box-shadow: 0 0 8px 2px var(--star-glow);
+  transform: translateY(-50%);
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: rotate(145deg) translateX(0);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(145deg) translateX(min(55vw, 640px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky {
+    display: none;
+  }
+}

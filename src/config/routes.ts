@@ -12,6 +12,8 @@ export const routeSegments = {
   contact: "contact",
   developers: "become-a-developer",
   developerAgreement: "developer-agreement",
+  investors: "angel-investor-application",
+  projectApplication: "i-have-a-project",
   privacy: "privacy",
   terms: "terms",
 } as const;
@@ -31,6 +33,8 @@ export const localizedSlugs: Record<Locale, Record<PageRouteId, string>> = {
     contact: "iletisim",
     developers: "gelistirici-ol",
     developerAgreement: "gelistirici-sozlesmesi",
+    investors: "melek-yatirimci-basvurusu",
+    projectApplication: "bir-projem-var",
     privacy: "gizlilik",
     terms: "kullanim-kosullari",
   },
@@ -45,6 +49,8 @@ export const localizedSlugs: Record<Locale, Record<PageRouteId, string>> = {
     contact: "contact",
     developers: "become-a-developer",
     developerAgreement: "developer-agreement",
+    investors: "angel-investor-application",
+    projectApplication: "i-have-a-project",
     privacy: "privacy",
     terms: "terms",
   },
@@ -68,6 +74,6 @@ export const getRouteIdBySegment = (segment: string | undefined): RouteId | null
 
 export const mainNavigation: PageRouteId[] = ["services", "products", "projects", "pricing", "about", "contact"];
 
-export const footerNavigation: PageRouteId[] = [...mainNavigation, "audit", "developers"];
+export const footerNavigation: PageRouteId[] = [...mainNavigation, "audit", "projectApplication", "developers", "investors"];
 
 export const legalNavigation: PageRouteId[] = ["privacy", "terms", "contact"];

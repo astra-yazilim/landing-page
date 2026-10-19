@@ -1,4 +1,7 @@
 import type { PagesContent } from "@/content/types";
+import { referralCommissionRate } from "@/config/projectApplications";
+
+const commission = `%${referralCommissionRate * 100}`;
 
 export const pages: PagesContent = {
   services: {
@@ -486,6 +489,372 @@ export const pages: PagesContent = {
       },
     ],
   },
+  investors: {
+    meta: {
+      title: "Melek Yatırımcı Başvurusu",
+      description:
+        "Astra ekosisteminde geliştirilen ürün ve projelere yatırım yapmak için melek yatırımcı başvurusu yapın.",
+    },
+    eyebrow: "Astra ekosistemi",
+    title: "Melek Yatırımcı Başvurusu",
+    description:
+      "Astra ekosisteminde geliştirilen ürün ve projelere yatırım yapmak için başvurun. Onay sonrası yalnızca size açılan proje özetlerini görüntüleyebileceğiniz bir hesap tanımlanır.",
+    faqTitle: "Merak edilenler",
+    faq: [
+      {
+        question: "Başvurudan sonra süreç nasıl işliyor?",
+        answer:
+          "Başvurunuzu ilgili ekibimiz değerlendirir ve e-posta ile size dönüş yapar. Onaylanırsanız, yalnızca size açılan proje özetlerini görüntüleyebileceğiniz bir hesap tanımlanır.",
+      },
+      {
+        question: "Neden kurumsal e-posta istiyorsunuz?",
+        answer:
+          "Proje özetleri gizli bilgi içerdiği için başvuru sahibinin kimliğini ve bağlı olduğu kurumu doğrulamamız gerekiyor. Doğrulama kurumsal e-posta adresiniz üzerinden yapılır.",
+      },
+      {
+        question: "Başvuru, yatırım yapma zorunluluğu getirir mi?",
+        answer:
+          "Hayır. Başvuru ve onay yalnızca proje özetlerine erişim sağlar. Yatırım süreci, taraflar arasında ayrıca imzalanacak yatırım sözleşmesiyle yürütülür.",
+      },
+      {
+        question: "Proje bilgileri ne kadar gizli?",
+        answer:
+          "Görüntülediğiniz tüm proje özetleri, finansal veriler ve belgeler gizli bilgidir; üçüncü kişilerle paylaşılamaz. Bu yükümlülük, erişiminiz sona erdikten sonra 3 yıl sürer.",
+      },
+      {
+        question: "BKY lisansı zorunlu mu?",
+        answer: "Hayır. Bireysel Katılım Yatırımcısı lisansınız varsa formda işaretlemeniz yeterli.",
+      },
+    ],
+    form: {
+      note: "Zorunlu alanlar * ile işaretlidir.",
+      groups: {
+        personal: "Kişisel bilgiler",
+        company: "Şirket bilgileri",
+        profile: "Yatırımcı profili",
+        consent: "Sözleşme ve onaylar",
+      },
+      fields: {
+        fullName: { label: "Ad Soyad *", placeholder: "Adınız ve soyadınız" },
+        corporateEmail: {
+          label: "Kurumsal e-posta *",
+          placeholder: "ad.soyad@sirketiniz.com",
+          hint: "Doğrulama kurumsal e-posta adresinizle yapılır.",
+        },
+        phone: { label: "Telefon *", placeholder: "05xx xxx xx xx" },
+        city: { label: "Şehir", placeholder: "İstanbul" },
+        title: { label: "Ünvan *", placeholder: "Örn. Genel Müdür, CFO" },
+        profession: { label: "Meslek *", placeholder: "Örn. Finansçı, Mühendis, Avukat" },
+        linkedinUrl: { label: "LinkedIn profili *", placeholder: "linkedin.com/in/kullanici-adi" },
+        companyName: { label: "Çalıştığınız / bağlı olduğunuz şirket *" },
+        companyWebsite: { label: "Şirket web sitesi", placeholder: "sirket.com" },
+        sector: { label: "Sektör *" },
+        employeeCount: { label: "Çalışan sayısı *" },
+        investorType: { label: "Yatırımcı tipi *" },
+        budgetRange: { label: "Yatırım bütçesi aralığı *" },
+        horizon: { label: "Yatırım vadesi *" },
+        previousInvestments: { label: "Önceki yatırım deneyimi *" },
+        involvement: { label: "Sürece katılım şekli *" },
+        referralSource: { label: "Bizi nereden duydunuz?", placeholder: "Örn. LinkedIn, tavsiye, etkinlik" },
+        preferredStages: { label: "İlgilendiğiniz aşamalar *" },
+        interestAreas: { label: "İlgilendiğiniz sektörler *" },
+        hasInvestorLicense: { label: "Bireysel Katılım Yatırımcısı (BKY) lisansım var" },
+        note: { label: "Eklemek istedikleriniz", placeholder: "Yatırım tezi, özellikle ilgilendiğiniz alanlar..." },
+        signatureName: {
+          label: "Dijital imza *",
+          placeholder: "Adınızı ve soyadınızı yazın",
+          hint: "Ad soyadınızı yazmanız, sözleşmeyi elektronik ortamda imzaladığınız anlamına gelir.",
+        },
+      },
+      options: {
+        employeeCount: {
+          "1_10": "1-10",
+          "11_50": "11-50",
+          "51_200": "51-200",
+          "201_1000": "201-1.000",
+          "1000_plus": "1.000+",
+        },
+        investorType: {
+          individual: "Bireysel melek yatırımcı",
+          corporate: "Kurumsal (şirket adına)",
+          angel_network: "Melek yatırım ağı üyesi",
+          family_office: "Aile ofisi",
+          fund: "Girişim sermayesi fonu",
+        },
+        budgetRange: {
+          "250k_1m": "250.000 – 1.000.000 ₺",
+          "1m_5m": "1.000.000 – 5.000.000 ₺",
+          "5m_20m": "5.000.000 – 20.000.000 ₺",
+          "20m_plus": "20.000.000 ₺ +",
+        },
+        horizon: { under_1y: "1 yıldan kısa", "1_3y": "1-3 yıl", "3_5y": "3-5 yıl", "5y_plus": "5 yıl +" },
+        preferredStages: { idea: "Fikir", mvp: "MVP / Prototip", early_revenue: "İlk gelir", growth: "Büyüme" },
+        previousInvestments: { none: "Henüz yok", "1_3": "1-3 yatırım", "4_10": "4-10 yatırım", "10_plus": "10+ yatırım" },
+        involvement: {
+          passive: "Pasif (yalnızca finansman)",
+          mentor: "Mentorluk / danışmanlık",
+          active: "Aktif (yönetim kurulu / operasyon)",
+        },
+      },
+      kvkkConsent: {
+        before: "",
+        linkLabel: "KVKK aydınlatma metnini",
+        after: " okudum, kişisel verilerimin işlenmesine onay veriyorum.",
+      },
+      agreement: {
+        title: "Yatırımcı Gizlilik ve Çerçeve Sözleşmesi",
+        acceptLabel: "Yatırımcı Gizlilik ve Çerçeve Sözleşmesi'ni okudum, onaylıyorum.",
+        clauses: [
+          "Platformda görüntülenen tüm proje özetleri, finansal veriler ve belgeler gizli bilgidir; üçüncü kişilerle paylaşılamaz, kopyalanamaz.",
+          "Gizlilik yükümlülüğü, yatırım yapılsın ya da yapılmasın görüntülenen tüm projeler için geçerlidir ve erişim sona erdikten sonra 3 yıl sürer.",
+          "Platform erişimi kişiseldir; giriş bilgileri başkasına devredilemez.",
+          "Fırsatlarda yer alan bilgiler yatırım tavsiyesi değildir; yatırım kararı ve sorumluluğu yatırımcıya aittir.",
+          "Yatırım süreci, taraflar arasında ayrıca imzalanacak yatırım sözleşmesi ile yürütülür.",
+          "Sözleşmeye aykırılık halinde Astra erişimi derhal sonlandırma ve doğan zararları talep etme hakkını saklı tutar.",
+        ],
+      },
+      submitLabel: "Başvuruyu gönder",
+      submittingLabel: "Gönderiliyor...",
+      successTitle: "Başvurunuz alındı",
+      successText: "İlgili ekibimiz başvurunuzu değerlendirdikten sonra e-posta ile size dönüş yapacak.",
+      errorText: "Başvurunuz gönderilemedi. Lütfen tekrar deneyin.",
+      validation: {
+        required: "Bu alan zorunludur.",
+        email: "Geçerli bir e-posta adresi girin.",
+        minLength: (min) => `En az ${min} karakter olmalıdır.`,
+        minSelection: "En az bir seçim yapın.",
+        corporateEmail: "Lütfen kurumsal e-posta adresinizi kullanın (gmail, hotmail vb. kabul edilmez).",
+        phone: "Geçerli bir telefon numarası girin (05xx xxx xx xx).",
+        signature: "İmza alanına adınızı ve soyadınızı başvurudakiyle aynı şekilde yazın.",
+        kvkk: "KVKK onayı zorunludur.",
+        agreement: "Devam etmek için sözleşmeyi onaylamanız gerekir.",
+      },
+    },
+  },
+  projectApplication: {
+    meta: {
+      title: "Bir Projem Var",
+      description:
+        "Fikrinizi, yarım kalan projenizi ya da yönlendirmek istediğiniz bir işi anlatın; teknik ekibimiz değerlendirip size dönüş yapsın.",
+    },
+    eyebrow: "Proje başvurusu",
+    title: "Bir Projem Var",
+    description:
+      "Fikrinizi, yarım kalan projenizi ya da yönlendirmek istediğiniz bir işi anlatın. Teknik ekibimiz bir yönetici ve mimar gözüyle değerlendirip size dönüş yapsın.",
+    faqTitle: "Merak edilenler",
+    faq: [
+      {
+        question: "Başvurumu kim değerlendiriyor?",
+        answer:
+          "Teknik ekibimiz projenizi bir yönetici ve mimar gözüyle değerlendirir; ardından e-posta ile size dönüş yapar.",
+      },
+      {
+        question: "Başvuru yapınca proje üstlenilmiş olur mu?",
+        answer:
+          "Hayır. Başvuru Astra için proje üstlenme yükümlülüğü doğurmaz; değerlendirme sonrası size yazılı bir teklif sunulur.",
+      },
+      {
+        question: "Yarım kalan projemi devredebilir miyim?",
+        answer:
+          "Evet. Mevcut kod ve dokümanları inceleyip projeyi kaldığı yerden tamamlarız. Kaynak kodun ve dokümanların size ait olduğunu ve devretmeye yetkili olduğunuzu beyan etmeniz gerekir.",
+      },
+      {
+        question: "Referans komisyonu nasıl işliyor?",
+        answer: `Projeyi bize yönlendirirsiniz; proje sözleşmeye bağlanırsa proje bedeli üzerinden ${commission} komisyon alırsınız. Sürece dahil olmanız gerekmez.`,
+      },
+      {
+        question: "Ortaklık modeli nasıl işliyor?",
+        answer:
+          "Geliştirme maliyetinin bir kısmını gelir paylaşımı veya hisse ile karşılarız. Koşullar ayrı bir sözleşme ile belirlenir.",
+      },
+      {
+        question: "Fikrimin gizliliği nasıl korunuyor?",
+        answer:
+          "Paylaştığınız proje bilgileri yalnızca değerlendirme amacıyla kullanılır ve gizli tutulur. Formda belirtirseniz karşılıklı gizlilik sözleşmesi (NDA) da imzalarız.",
+      },
+    ],
+    form: {
+      note: "Zorunlu alanlar * ile işaretlidir.",
+      groups: {
+        contact: "İletişim bilgileri",
+        summary: "Proje özeti",
+        status: "Mevcut durum",
+        scope: "Kapsam ve teknik ihtiyaçlar",
+        budget: "Bütçe ve takvim",
+        collaboration: "İş birliği modeli",
+        consent: "Sözleşme ve onaylar",
+      },
+      fields: {
+        fullName: { label: "Ad Soyad *", placeholder: "Adınız ve soyadınız" },
+        email: { label: "E-posta *", placeholder: "ornek@mail.com" },
+        phone: { label: "Telefon *", placeholder: "05xx xxx xx xx" },
+        role: { label: "Projedeki rolünüz *", placeholder: "Örn. Kurucu, Ürün Sahibi, CTO" },
+        companyName: { label: "Şirket / girişim adı", placeholder: "Şirket adı" },
+        linkedinUrl: { label: "LinkedIn profili", placeholder: "linkedin.com/in/kullanici-adi" },
+        projectName: { label: "Proje adı *", placeholder: "Örn. Kooperatif pazar yeri" },
+        productType: { label: "Ürün tipi *" },
+        sector: { label: "Sektör *" },
+        summary: { label: "Projeyi kısaca anlatın *", placeholder: "Ürünün ne yaptığını 2-3 cümleyle anlatın" },
+        problem: { label: "Hangi problemi çözüyor? *", placeholder: "Kullanıcının bugün yaşadığı sorun" },
+        targetAudience: {
+          label: "Hedef kullanıcılar kimler? *",
+          placeholder: "Örn. Türkiye'deki 50-500 çalışanlı lojistik firmaları",
+        },
+        stage: { label: "Projenin şu anki aşaması *" },
+        completionPercent: {
+          label: "Tahmini tamamlanma oranı (%)",
+          hint: "Geliştirme sürüyorsa veya yarım kaldıysa doldurun.",
+        },
+        existingAssets: { label: "Elinizde neler var?" },
+        techStack: { label: "Kullanılan teknolojiler", placeholder: "Örn. Laravel, Vue, MySQL, AWS" },
+        repositoryUrl: { label: "Kod deposu (varsa)", placeholder: "https://github.com/..." },
+        stallReason: {
+          label: "Proje neden yarım kaldı / neden ekip değişikliği gerekiyor?",
+          placeholder: "Örn. Ajansla anlaşma bitti, kod kalitesi düşük, ekip dağıldı",
+        },
+        platforms: { label: "Hangi platformlarda çalışacak? *" },
+        coreFeatures: { label: "Olmazsa olmaz özellikler (MVP) *", placeholder: "Her satıra bir özellik yazın" },
+        integrations: { label: "Gerekli entegrasyonlar" },
+        expectedUsers: { label: "Beklenen kullanıcı hacmi *" },
+        technicalRequirements: {
+          label: "Güvenlik, KVKK, performans veya altyapı beklentileri",
+          placeholder: "Örn. 2FA, rol bazlı yetki, verilerin Türkiye'de tutulması",
+        },
+        budgetRange: { label: "Bütçe aralığı *" },
+        timeline: { label: "Hedef takvim *" },
+        fundingStatus: { label: "Finansman durumu *" },
+        collaborationModel: { label: "Nasıl çalışmak istersiniz? *" },
+        referralCompany: { label: "Yönlendirdiğiniz firma *" },
+        referralContact: { label: "Firma yetkilisi *" },
+        referralEmail: { label: "Yetkili e-posta *" },
+        referralRelationship: { label: "Firma ile ilişkiniz", placeholder: "Örn. Danışmanıyım, eski çalışanıyım" },
+        ndaRequested: { label: "Karşılıklı gizlilik sözleşmesi (NDA) imzalamak istiyorum" },
+        signatureName: {
+          label: "Dijital imza *",
+          placeholder: "Adınızı ve soyadınızı yazın",
+          hint: "Ad soyadınızı yazmanız, sözleşmeyi elektronik ortamda imzaladığınız anlamına gelir.",
+        },
+      },
+      options: {
+        productType: {
+          web: "Web uygulaması",
+          mobile: "Mobil uygulama",
+          ecommerce: "E-ticaret",
+          saas: "SaaS ürün",
+          internal_tool: "Kurum içi yazılım",
+          ai: "Yapay zeka çözümü",
+          other: "Diğer",
+        },
+        stage: {
+          idea: "Fikir aşamasında",
+          designed: "Tasarımı / analizi hazır",
+          in_development: "Geliştirme sürüyor",
+          stalled: "Yarım kaldı",
+          live: "Canlıda, geliştirilmesi gerekiyor",
+        },
+        existingAssets: {
+          requirements: "Gereksinim / analiz dokümanı",
+          design: "UI tasarımları (Figma vb.)",
+          source_code: "Kaynak kod",
+          live_environment: "Canlı ortam",
+          test_environment: "Test ortamı",
+          documentation: "Teknik dokümantasyon",
+        },
+        platforms: { web: "Web", ios: "iOS", android: "Android", admin_panel: "Yönetim paneli", desktop: "Masaüstü" },
+        integrations: {
+          payment: "Ödeme (iyzico, PayTR…)",
+          erp: "ERP / muhasebe (Logo, Mikro…)",
+          marketplace: "Pazaryeri",
+          cargo: "Kargo",
+          sms_email: "SMS / e-posta",
+          maps: "Harita / konum",
+          ai: "Yapay zeka servisleri",
+          sso: "Kurumsal giriş (SSO)",
+        },
+        expectedUsers: {
+          under_1k: "Aylık 1.000 kullanıcıdan az",
+          "1k_10k": "Aylık 1.000 – 10.000",
+          "10k_100k": "Aylık 10.000 – 100.000",
+          "100k_plus": "Aylık 100.000 +",
+        },
+        budgetRange: {
+          under_100k: "100.000 ₺ altı",
+          "100k_250k": "100.000 – 250.000 ₺",
+          "250k_500k": "250.000 – 500.000 ₺",
+          "500k_1m": "500.000 – 1.000.000 ₺",
+          "1m_plus": "1.000.000 ₺ +",
+          undecided: "Henüz belirlenmedi",
+        },
+        timeline: {
+          asap: "En kısa sürede",
+          "1_3_months": "1-3 ay",
+          "3_6_months": "3-6 ay",
+          "6_plus_months": "6 ay +",
+          flexible: "Esnek",
+        },
+        fundingStatus: {
+          self_funded: "Öz kaynak",
+          seeking: "Yatırım arıyorum",
+          funded: "Yatırım aldı",
+          grant: "Hibe / destek (KOSGEB, TÜBİTAK…)",
+        },
+      },
+      collaborationModels: {
+        continue_existing: {
+          title: "Yarım kalan projemi devralın",
+          text: "Mevcut kod ve dokümanları inceleyip projeyi kaldığı yerden tamamlarız.",
+        },
+        build_from_scratch: {
+          title: "Sıfırdan geliştirin",
+          text: "Analiz, tasarım ve geliştirmeyi uçtan uca biz yürütürüz.",
+        },
+        referral: {
+          title: "Referans oluyorum (komisyon)",
+          text: "Projeyi bize yönlendirirsiniz; süreçte yer almadan proje bedeli üzerinden komisyon alırsınız.",
+        },
+        partnership: {
+          title: "Ortaklık / gelir paylaşımı",
+          text: "Geliştirme maliyetinin bir kısmını gelir paylaşımı veya hisse ile karşılarız.",
+        },
+      },
+      referralNotice: `Proje sözleşmeye bağlanırsa proje bedeli üzerinden ${commission} komisyon alırsınız.`,
+      kvkkConsent: {
+        before: "",
+        linkLabel: "KVKK aydınlatma metnini",
+        after: " okudum, kişisel verilerimin işlenmesine onay veriyorum.",
+      },
+      agreement: {
+        title: "Proje Başvurusu ve İş Birliği Çerçeve Sözleşmesi",
+        acceptLabel: "Proje Başvurusu ve İş Birliği Çerçeve Sözleşmesi'ni okudum, onaylıyorum.",
+        clauses: [
+          "Paylaştığınız proje bilgileri yalnızca değerlendirme amacıyla kullanılır ve gizli tutulur.",
+          "Başvuru, Astra için proje üstlenme yükümlülüğü doğurmaz; değerlendirme sonrası yazılı teklif sunulur.",
+          "Yarım kalan projelerde kaynak kod ve dokümanların size ait olduğunu ve devretmeye yetkili olduğunuzu beyan edersiniz.",
+          `Referans modelinde, yönlendirdiğiniz proje sözleşmeye bağlanırsa proje bedelinin ${commission} oranında komisyon ödenir; sürece dahil olmanız gerekmez.`,
+          "Ortaklık / gelir paylaşımı modelinde koşullar ayrı bir sözleşme ile belirlenir.",
+          "Talep etmeniz halinde karşılıklı gizlilik sözleşmesi (NDA) ayrıca imzalanır.",
+        ],
+      },
+      submitLabel: "Başvuruyu gönder",
+      submittingLabel: "Gönderiliyor...",
+      successTitle: "Başvurunuz alındı",
+      successText: "İlgili ekibimiz başvurunuzu değerlendirdikten sonra e-posta ile size dönüş yapacak.",
+      codeLabel: "Başvuru numaranız",
+      errorText: "Başvurunuz gönderilemedi. Lütfen tekrar deneyin.",
+      validation: {
+        required: "Bu alan zorunludur.",
+        email: "Geçerli bir e-posta adresi girin.",
+        minLength: (min) => `En az ${min} karakter olmalıdır.`,
+        minSelection: "En az bir seçim yapın.",
+        phone: "Geçerli bir telefon numarası girin (05xx xxx xx xx).",
+        percent: "0 ile 100 arasında bir sayı girin.",
+        referral: "Referans olduğunuz firma ve yetkili bilgilerini girin.",
+        signature: "İmza alanına adınızı ve soyadınızı başvurudakiyle aynı şekilde yazın.",
+        kvkk: "KVKK onayı zorunludur.",
+        agreement: "Devam etmek için sözleşmeyi onaylamanız gerekir.",
+      },
+    },
+  },
   privacy: {
     meta: {
       title: "Gizlilik Politikası",
@@ -517,6 +886,13 @@ export const pages: PagesContent = {
         paragraphs: [
           "Astra Geliştirici Ağı başvurularında ad, iletişim bilgileri, ünvan, yetkinlikler, LinkedIn ve GitHub profilleri, özgeçmiş ve çalışma tercihlerinizi; başvurunuzu değerlendirmek, onaylanırsanız size uygun işleri önermek ve sözleşme ilişkisini yürütmek amacıyla işleriz. Hukuki sebep, KVKK m.5/2(c) uyarınca bir sözleşmenin kurulması ve ifasıdır.",
           "Başvurunuz reddedilirse verilerinizi en geç bir yıl içinde sileriz; onaylanırsanız çalışma ilişkisi süresince ve yasal saklama süreleri boyunca saklarız. Başvurular ve özgeçmişler e-posta altyapısı sağlayıcımız aracılığıyla iletilir.",
+        ],
+      },
+      {
+        heading: "Yatırımcı başvuruları",
+        paragraphs: [
+          "Melek yatırımcı başvurularında ad, kurumsal e-posta, telefon, ünvan, meslek, LinkedIn profili, şirket bilgileri ve yatırım tercihlerinizi; başvurunuzu değerlendirmek, onaylanırsanız size uygun proje özetlerini paylaşmak ve sözleşme ilişkisini yürütmek amacıyla işleriz.",
+          "Başvurunuz reddedilirse verilerinizi en geç bir yıl içinde sileriz; onaylanırsanız ilişkimiz süresince ve yasal saklama süreleri boyunca saklarız.",
         ],
       },
       {

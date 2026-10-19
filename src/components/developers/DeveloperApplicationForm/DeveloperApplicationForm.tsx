@@ -21,7 +21,7 @@ import {
   type DeveloperErrorField,
   type DeveloperErrors,
 } from "@/lib/developers";
-import styles from "./DeveloperApplicationForm.module.css";
+import styles from "@/components/forms/ApplicationForm/ApplicationForm.module.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 type TextField = Exclude<
