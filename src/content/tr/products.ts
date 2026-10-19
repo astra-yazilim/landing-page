@@ -60,7 +60,7 @@ export const projects: Record<ProjectId, ProjectText> = {
     summary: "Zeytinyağı ve doğal ürünler için ürün öneri akışı ve sohbet asistanı içeren e-ticaret mağazası.",
   },
   stargazeApp: {
-    title: "Stargaze Mobil",
+    title: "Stargaze Mobil Uyg.",
     category: "Astroloji",
     summary: "Günlük ve aylık burç yorumları sunan astroloji mobil uygulaması.",
   },

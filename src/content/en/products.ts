@@ -60,7 +60,7 @@ export const projects: Record<ProjectId, ProjectText> = {
     summary: "An e-commerce store for olive oil and natural products with a product recommendation flow and chat assistant.",
   },
   stargazeApp: {
-    title: "Stargaze Mobil",
+    title: "Stargaze Mobile App.",
     category: "Astrology",
     summary: "An astrology mobile app with daily and monthly horoscope readings.",
   },
