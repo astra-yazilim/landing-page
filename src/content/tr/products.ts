@@ -164,6 +164,17 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Harita ve mühendislik",
     summary: "Harita, mimarlık ve mühendislik firması için hizmet tanıtımlı kurumsal site.",
   },
+  dosyaYazdir: {
+    title: "Dosya Yazdır",
+    category: "Baskı ve kırtasiye",
+    summary:
+      "Kırtasiye ve fotokopiciye numara vermeden dosya gönderme uygulaması: QR'ı okut, yükle, 4 karakterlik kodu söyle. ÖSYM, e-Devlet belgesi, ödev ve CV çıktısı için.",
+  },
+  muratAvli: {
+    title: "Murat Avli",
+    category: "Spor ve fitness",
+    summary: "Fitness antrenörü için çalışma programlarını ve planlarını tanıtan kişisel site.",
+  },
   emfar: {
     title: "Emfar Yangın Söndürme",
     category: "Güvenlik",

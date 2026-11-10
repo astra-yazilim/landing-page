@@ -164,6 +164,17 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Surveying & engineering",
     summary: "A corporate site with service pages for a surveying, architecture and engineering firm.",
   },
+  dosyaYazdir: {
+    title: "Dosya Yazdır",
+    category: "Printing & stationery",
+    summary:
+      "An app for sending files to print and copy shops without sharing your number: scan the QR code, upload, tell the 4-character code. For exam documents, e-Government records, homework and CVs.",
+  },
+  muratAvli: {
+    title: "Murat Avli",
+    category: "Sports & fitness",
+    summary: "A personal site presenting a fitness coach's training programs and plans.",
+  },
   emfar: {
     title: "Emfar Yangın Söndürme",
     category: "Safety",
