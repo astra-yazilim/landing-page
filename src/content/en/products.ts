@@ -134,6 +134,12 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Beauty",
     summary: "An English-language showcase and booking site for a semi-permanent make-up studio.",
   },
+  mola: {
+    title: "Mola",
+    category: "Desktop app",
+    summary:
+      "A free app that turns a website, photo, video or GIF into your screen saver. It waits quietly in the menu bar and takes the stage when you step away. For macOS, Windows and Ubuntu.",
+  },
   adminPanel: {
     title: "Yönetim Paneli",
     category: "Admin dashboard",

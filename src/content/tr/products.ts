@@ -134,6 +134,12 @@ export const projects: Record<ProjectId, ProjectText> = {
     category: "Güzellik",
     summary: "Kalıcı makyaj stüdyosu için İngilizce tanıtım ve randevu sitesi.",
   },
+  mola: {
+    title: "Mola",
+    category: "Masaüstü uygulaması",
+    summary:
+      "Bir siteyi, fotoğrafı, videoyu ya da GIF'i ekran koruyucu yapan ücretsiz uygulama. Menü çubuğunda sessizce bekler, sen kalkınca sahneye çıkar. macOS, Windows ve Ubuntu için.",
+  },
   adminPanel: {
     title: "Yönetim Paneli",
     category: "Yönetim paneli",

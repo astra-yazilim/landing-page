@@ -43,6 +43,15 @@ export const projectCatalog = [
     own: false,
   },
   {
+    id: "mola",
+    image: "/projects/mola.webp",
+    url: null,
+    device: "laptop",
+    platform: "desktop",
+    featured: false,
+    own: true,
+  },
+  {
     id: "salesCollection",
     image: "/projects/satis-tahsilat-platformu.webp",
     url: null,
