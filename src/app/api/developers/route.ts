@@ -1,3 +1,4 @@
+import { isRouteEnabled } from "@/config/features";
 import { NextResponse } from "next/server";
 import { defaultLocale, isLocale, type Locale } from "@/config/i18n";
 import { getPath } from "@/config/routes";
@@ -80,6 +81,7 @@ function renderApplicantEmail(values: DeveloperApplicationValues, locale: Locale
 }
 
 export async function POST(request: Request) {
+  if (!isRouteEnabled("developers")) return NextResponse.json({ error: "not_found" }, { status: 404 });
   let form: FormData;
   try {
     form = await request.formData();

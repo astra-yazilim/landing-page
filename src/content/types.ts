@@ -45,7 +45,7 @@ export type FaqItem = { question: string; answer: string };
 
 export type IconStep = { title: string; text: string; icon: IconName };
 
-export type LegalSection = { heading: string; paragraphs: string[] };
+export type LegalSection = { heading: string; paragraphs: string[]; routeId?: PageRouteId };
 
 export type PageMeta = { title: string; description: string };
 

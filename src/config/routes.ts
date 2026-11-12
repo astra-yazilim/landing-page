@@ -1,3 +1,4 @@
+import { isRouteEnabled } from "./features";
 import { defaultLocale, type Locale } from "./i18n";
 
 export const routeSegments = {
@@ -74,6 +75,8 @@ export const getRouteIdBySegment = (segment: string | undefined): RouteId | null
 
 export const mainNavigation: PageRouteId[] = ["services", "products", "projects", "pricing", "about", "contact"];
 
-export const footerNavigation: PageRouteId[] = [...mainNavigation, "audit", "projectApplication", "developers", "investors"];
+export const footerNavigation: PageRouteId[] = (
+  [...mainNavigation, "audit", "projectApplication", "developers", "investors"] as PageRouteId[]
+).filter(isRouteEnabled);
 
 export const legalNavigation: PageRouteId[] = ["privacy", "terms", "contact"];

@@ -1,5 +1,6 @@
 "use client";
 
+import { isRouteEnabled } from "@/config/features";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
@@ -78,15 +79,17 @@ export function Header() {
             <LanguageSwitcher />
             <ThemeToggle />
           </div>
-          <Link
-            href={getPath(locale, "developers")}
-            className={cx(styles.developerLink, isActive("developers") && styles.active)}
-            aria-current={isActive("developers") ? "page" : undefined}
-            title={layout.header.developerCta}
-          >
-            <Icon name="badgeCheck" size={18} />
-            {layout.header.developerCta}
-          </Link>
+          {isRouteEnabled("developers") && (
+            <Link
+              href={getPath(locale, "developers")}
+              className={cx(styles.developerLink, isActive("developers") && styles.active)}
+              aria-current={isActive("developers") ? "page" : undefined}
+              title={layout.header.developerCta}
+            >
+              <Icon name="badgeCheck" size={18} />
+              {layout.header.developerCta}
+            </Link>
+          )}
           <button
             type="button"
             className={styles.menuButton}
@@ -169,14 +172,16 @@ export function Header() {
                 >
                   {layout.header.cta}
                 </LeadButton>
-                <Link
-                  href={getPath(locale, "developers")}
-                  className={styles.drawerDeveloper}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Icon name="badgeCheck" size={18} />
-                  {layout.header.developerCta}
-                </Link>
+                {isRouteEnabled("developers") && (
+                  <Link
+                    href={getPath(locale, "developers")}
+                    className={styles.drawerDeveloper}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Icon name="badgeCheck" size={18} />
+                    {layout.header.developerCta}
+                  </Link>
+                )}
                 <a className={styles.drawerMail} href={`mailto:${siteConfig.contact.email}`}>
                   {siteConfig.contact.email}
                 </a>

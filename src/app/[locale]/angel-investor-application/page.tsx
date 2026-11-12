@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import { isRouteEnabled } from "@/config/features";
 import type { Metadata } from "next";
 import { ApplicationPageLayout } from "@/components/forms/ApplicationPageLayout/ApplicationPageLayout";
 import { InvestorApplicationForm } from "@/components/investors/InvestorApplicationForm/InvestorApplicationForm";
@@ -10,11 +12,13 @@ import { faqSchema, pageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+  if (!isRouteEnabled("investors")) notFound();
   const locale = await resolveLocale(params);
   return buildMetadata({ locale, routeId: "investors", ...getContent(locale).pages.investors.meta });
 }
 
 export default async function InvestorApplicationPage({ params }: LocaleParams) {
+  if (!isRouteEnabled("investors")) notFound();
   const locale = await resolveLocale(params);
   const page = getContent(locale).pages.investors;
 

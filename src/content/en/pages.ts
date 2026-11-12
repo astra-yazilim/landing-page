@@ -867,6 +867,7 @@ export const pages: PagesContent = {
       },
       {
         heading: "Developer applications",
+        routeId: "developers",
         paragraphs: [
           "For Astra Developer Network applications we process your name, contact details, title, skills, LinkedIn and GitHub profiles, CV and work preferences to review your application, offer you suitable work if approved and manage our contractual relationship. The legal basis is the formation and performance of a contract under Article 5(2)(c) of Law No. 6698.",
           "If your application is rejected, we delete your data within one year at the latest; if approved, we keep it for the duration of our working relationship and any legal retention periods. Applications and CVs are delivered through our email infrastructure provider.",
@@ -874,6 +875,7 @@ export const pages: PagesContent = {
       },
       {
         heading: "Investor applications",
+        routeId: "investors",
         paragraphs: [
           "For angel investor applications we process your name, corporate email, phone, title, profession, LinkedIn profile, company details and investment preferences to review your application, share suitable project summaries with you if approved and manage our contractual relationship.",
           "If your application is rejected, we delete your data within one year at the latest; if approved, we keep it for the duration of our relationship and any legal retention periods.",

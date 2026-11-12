@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { isRouteEnabled } from "@/config/features";
 import { locales } from "@/config/i18n";
 import type { RouteId } from "@/config/routes";
 import { serviceCatalog } from "@/config/services";
@@ -26,7 +27,9 @@ const staticEntries: { routeId: RouteId; priority: number; changeFrequency: Chan
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const groups = [
-    ...staticEntries.map((entry) => ({ ...entry, paths: getLocalizedPaths(entry.routeId) })),
+    ...staticEntries
+      .filter((entry) => entry.routeId === "home" || isRouteEnabled(entry.routeId))
+      .map((entry) => ({ ...entry, paths: getLocalizedPaths(entry.routeId) })),
     ...serviceCatalog.map((service) => ({
       priority: 0.8,
       changeFrequency: "monthly" as const,

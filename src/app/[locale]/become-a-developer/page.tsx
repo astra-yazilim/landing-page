@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import { isRouteEnabled } from "@/config/features";
 import type { Metadata } from "next";
 import { DeveloperApplicationForm } from "@/components/developers/DeveloperApplicationForm/DeveloperApplicationForm";
 import { Faq } from "@/components/sections/Faq/Faq";
@@ -19,6 +21,7 @@ import styles from "./page.module.css";
 const formAnchor = "application";
 
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+  if (!isRouteEnabled("developers")) notFound();
   const locale = await resolveLocale(params);
   return buildMetadata({ locale, routeId: "developers", ...getContent(locale).pages.developers.meta });
 }
@@ -42,6 +45,7 @@ function CardGrid({ items }: { items: IconStep[] }) {
 }
 
 export default async function DevelopersPage({ params }: LocaleParams) {
+  if (!isRouteEnabled("developers")) notFound();
   const locale = await resolveLocale(params);
   const page = getContent(locale).pages.developers;
 

@@ -1,3 +1,4 @@
+import { isRouteEnabled } from "@/config/features";
 import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { localeMeta, type Locale } from "@/config/i18n";
 import { getPath, type PageRouteId } from "@/config/routes";
@@ -28,7 +29,9 @@ export function LegalDocument({ locale, routeId, title, updatedAt, updatedLabel,
         </p>
       </PageHero>
       <article className={styles.document}>
-        {sections.map((section) => (
+        {sections
+          .filter((section) => !section.routeId || isRouteEnabled(section.routeId))
+          .map((section) => (
           <section key={section.heading} className={styles.section}>
             <h2 className={styles.heading}>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (

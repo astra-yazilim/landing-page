@@ -883,6 +883,7 @@ export const pages: PagesContent = {
       },
       {
         heading: "Geliştirici başvuruları",
+        routeId: "developers",
         paragraphs: [
           "Astra Geliştirici Ağı başvurularında ad, iletişim bilgileri, ünvan, yetkinlikler, LinkedIn ve GitHub profilleri, özgeçmiş ve çalışma tercihlerinizi; başvurunuzu değerlendirmek, onaylanırsanız size uygun işleri önermek ve sözleşme ilişkisini yürütmek amacıyla işleriz. Hukuki sebep, KVKK m.5/2(c) uyarınca bir sözleşmenin kurulması ve ifasıdır.",
           "Başvurunuz reddedilirse verilerinizi en geç bir yıl içinde sileriz; onaylanırsanız çalışma ilişkisi süresince ve yasal saklama süreleri boyunca saklarız. Başvurular ve özgeçmişler e-posta altyapısı sağlayıcımız aracılığıyla iletilir.",
@@ -890,6 +891,7 @@ export const pages: PagesContent = {
       },
       {
         heading: "Yatırımcı başvuruları",
+        routeId: "investors",
         paragraphs: [
           "Melek yatırımcı başvurularında ad, kurumsal e-posta, telefon, ünvan, meslek, LinkedIn profili, şirket bilgileri ve yatırım tercihlerinizi; başvurunuzu değerlendirmek, onaylanırsanız size uygun proje özetlerini paylaşmak ve sözleşme ilişkisini yürütmek amacıyla işleriz.",
           "Başvurunuz reddedilirse verilerinizi en geç bir yıl içinde sileriz; onaylanırsanız ilişkimiz süresince ve yasal saklama süreleri boyunca saklarız.",

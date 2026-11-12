@@ -95,6 +95,37 @@
   color: var(--color-muted);
 }
 
+/* Tek kart kaldığında geniş, yatay yerleşim */
+@media (min-width: 768px) {
+  .ecosystem li:only-child .ecosystemCard {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+    row-gap: 6px;
+    align-items: center;
+  }
+
+  .ecosystem li:only-child .ecosystemIcon {
+    grid-row: 1 / span 2;
+  }
+
+  .ecosystem li:only-child .ecosystemTitle,
+  .ecosystem li:only-child .ecosystemText {
+    grid-column: 2;
+  }
+
+  .ecosystem li:only-child .ecosystemText {
+    max-width: 64ch;
+    margin-bottom: 0;
+  }
+
+  .ecosystem li:only-child .ecosystemCard > :last-child {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
 .faqLayout {
   display: grid;
   grid-template-columns: 1fr;

@@ -1,3 +1,4 @@
+import { isRouteEnabled } from "@/config/features";
 import { AuditPanel } from "@/components/sections/AuditPanel/AuditPanel";
 import { ClosingCta } from "@/components/sections/ClosingCta/ClosingCta";
 import { Comparison } from "@/components/sections/Comparison/Comparison";
@@ -130,7 +131,7 @@ export default async function HomePage({ params }: LocaleParams) {
             />
           </Reveal>
           <ul className={styles.ecosystem}>
-            {(["projectApplication", "developers", "investors"] as const).map((routeId, index) => {
+            {(["projectApplication", "developers", "investors"] as const).filter(isRouteEnabled).map((routeId, index) => {
               const card = home.ecosystem.cards[routeId];
               return (
                 <li key={routeId}>
